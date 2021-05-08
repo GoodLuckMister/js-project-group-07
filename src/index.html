@@ -11,5 +11,30 @@
       rel="stylesheet"
     />
   </head>
-  <body></body>
+  <body>
+    <form class="form">
+      <input
+        class="form__input"
+        type="text"
+        name="search"
+        id="search"
+        placeholder="Start searching"
+        autocomplete="none"
+      />
+      <input
+        class="form__input"
+        type="text"
+        name="country"
+        list="countries"
+        placeholder="Choose country"
+        autocomplete="country"
+      />
+      <datalist id="countries">
+        <option value="Ukraine">Ukraine</option>
+        <option value="Poland">Poland</option>
+        <option value="Germany">Germany</option>
+        <option value="Belgium">Belgium</option>
+      </datalist>
+    </form>
+  </body>
 </html>
