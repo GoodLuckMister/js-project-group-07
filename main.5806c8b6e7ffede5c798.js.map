@@ -1,1 +1,0 @@
-{"version":3,"sources":["webpack:///./index.js"],"names":["document","querySelector","innerHTML"],"mappings":"kHAAA,iBACaA,SAASC,cAAc,QAC/BC,UAAY,gB","file":"main.5806c8b6e7ffede5c798.js","sourcesContent":["import './styles.css';\r\nconst body = document.querySelector('body');\r\nbody.innerHTML = 'hello world';\r\n"],"sourceRoot":""}
