@@ -1,2 +1,3 @@
 import './styles.css';
-import './sass/main.scss'
+import './sass/base/fonts.css';
+import './sass/main.scss';
