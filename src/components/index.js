@@ -1,1 +1,1 @@
-import './API/discovery';
+import './API/main';
