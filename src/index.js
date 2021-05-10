@@ -1,4 +1,4 @@
 import './styles.css';
-import './sass/base/fonts.css';
+import './css/fonts.css';
 import './sass/main.scss';
 import './js/main';
