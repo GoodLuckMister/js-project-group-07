@@ -1,9 +1,13 @@
 import api from './discoveryAPI';
-
+import cards from '../renderCard';
+const cardsList = document.querySelector('.events-section__list');
 let event = new api('Concert', 'US');
 event
   .fetchApiServiceAll()
-  .then(r => console.log(r._embedded.events))
+  .then(r => {
+    console.log(r._embedded.events);
+    return cards(r._embedded.events, cardsList);
+  })
   .catch(e => console.log('hello', e));
 
 const bodyRef = document.querySelector('body');
