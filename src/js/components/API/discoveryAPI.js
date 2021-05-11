@@ -1,9 +1,9 @@
 const BASIC_URL = 'https://app.ticketmaster.com/discovery/v2/';
-const KEY = 'y0yYLqXgtKWQACxMls2Nd9iuExOsMHTV'
+const KEY = 'y0yYLqXgtKWQACxMls2Nd9iuExOsMHTV';
 
-export default class ApiService {
+export default class {
   constructor(keyword = '', country = 'US') {
-    this.page = 1;
+    this.page = 0;
     this.country = country;
     this.keyword = keyword;
   }
@@ -21,7 +21,7 @@ export default class ApiService {
     this.page -= 1;
   }
   resetPage() {
-    return (this.page = 1);
+    return (this.page = 0);
   }
   get query() {
     return this.keyword;

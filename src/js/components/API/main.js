@@ -1,26 +1,23 @@
 import api from './discoveryAPI';
 import cards from '../renderCard/renderCard';
-import refs from '../refs'
+import refs from '../refs';
 
 refs.form.addEventListener('submit', onSearch);
 const event = new api('Concert', 'US');
-
-function onSearch(e) {
-  e.preventDefault();
-
-  event.query = e.target.elements.search.value;
-    event.location = e.target.elements.country.value;
-
-  event
+event
   .fetchApiServiceAll()
   .then(r => {
     console.log(r._embedded.events);
     return cards(r._embedded.events, refs.cardsList);
   })
   .catch(e => console.log('hello', e));
+
+function onSearch(e) {
+  e.preventDefault();
+
+  event.query = e.target.elements.search.value;
+  event.location = e.target.elements.country.value;
 }
-
-
 
 // const bodyRef = document.querySelector('body');
 // bodyRef.addEventListener('keydown', e => {
