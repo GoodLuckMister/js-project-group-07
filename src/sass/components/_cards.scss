@@ -1,0 +1,67 @@
+.events-section__list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px 4px;
+
+  @include for-size('tablet') {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 45px 13px;
+  }
+
+  @include for-size('desktop') {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 50px 56px;
+  }
+}
+
+.events-section__item {
+  width: 138px;
+  height: 231px;
+
+  @include for-size('tablet') {
+    width: 194px;
+    height: 312px;
+  }
+}
+
+.card__event-title {
+  font-family: Montserrat;
+  color: getColor('accent');
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 1.2;
+  text-align: center;
+
+  @include for-size('tablet') {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+
+.card__event-date {
+  font-family: Montserrat;
+  color: getColor('light');
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 1.2;
+  text-align: center;
+
+  @include for-size('tablet') {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+
+.card__event-place {
+  font-family: Montserrat;
+  color: getColor('light');
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.25;
+  text-align: center;
+
+  @include for-size('tablet') {
+    font-size: 14px;
+    line-height: 1.2;
+  }
+}
