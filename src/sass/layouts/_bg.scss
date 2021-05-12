@@ -1,5 +1,6 @@
 main,
 footer {
+  background-color: black;
   @include for-size(tablet) {
     background-image: url('../../src/images/our-images/bg-body_tablet.jpg');
     background-size: cover;
@@ -36,7 +37,7 @@ body::before {
     height: 2946px;
     left: 86px;
     top: -20px;
-    z-index: 10;
+    z-index: -100;
   }
 
   @include for-size(desktop) {
