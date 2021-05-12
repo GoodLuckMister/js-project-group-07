@@ -4,7 +4,6 @@ import refs from '../refs';
 import makePaginationList from '../pagination/pagination';
 import debounce from 'lodash.debounce';
 
-<
 refs.form.addEventListener('input', onSearch);
 
 refs.form.addEventListener('submit', debounce(onSearch, 500));
