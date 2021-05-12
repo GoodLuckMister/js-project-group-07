@@ -24,7 +24,11 @@
     font-size: 16px;
     line-height: 1.25;
 
-    color: getColor('form-text');
+    // color: getColor('form-text');
+
+    &::placeholder{
+      color: getColor('form-text');
+    }
 
     &:hover ~ .form__icon--search,
     &:focus ~ .form__icon--search {
