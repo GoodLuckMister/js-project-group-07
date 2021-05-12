@@ -52,20 +52,86 @@
         display: inline;
         text-align: center;
     
+    & li {
+        margin-bottom: 10px;
+
+        &.price .modal-content__icon--ticket,
+        &.price .modal-content__event-about__event-prices {
+            display: inline-block;
+        }
+        &.price .button {
+            display: inline-block;
+            text-decoration: none;
+            text-transform: uppercase;
+            color: getColor('light');
+            background-color: getColor('btn-bg');
+            padding: 10px 19px;
+            border-radius: 5px;
+
+            font-style: normal;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 1.25;
+
+            &:hover,
+            &:focus {
+                background-color: getColor('accent');
+            }
+        }
+
+    }
+
     & h3 {
         text-transform: uppercase;
         color: getColor('accent');
+        margin-bottom: 5px;
+
+        font-style: normal;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 1,2;
+
     }
 
     & p {
         color: getColor('info');
+        margin-bottom: 0;
+
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 1.25;
+    }
+
+    & p:not(:last-child) {
+        margin-bottom: 3px;
     }
     }
 
+    .modal-content__button-more {
+        display: inline-block;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: getColor('btn-bg');
+        background-color: transparent;
+        padding: 10px 3px;
+        border-radius: 5px;
+        border: 1px solid getColor('btn-bg');
+
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 1.25;
+
+        &:hover,
+        &:focus {
+            background-color: getColor('accent');
+            color: getColor('light');
+        }
+    }
 
 
-
-    .modal__button {
+    .modal__button.close {
         position: absolute;
         display: flex;
         align-items: center;
@@ -76,11 +142,15 @@
         // height: 25px;
         width: 17px;
         height: 17px;
+        padding: 0;
+        background-color: transparent;
+        border: none;
         fill: getColor('btn-bg');
+   
+        // &:hover,
+        // &:focus {
+        //     fill: getColor('accent');
+        // }
     }
 
-    &:hover,
-    &:focus {
-        fill: getColor('accent');
-    }
 }
