@@ -30,10 +30,10 @@ function onSearch(e) {
 
 fetchEvents(event);
 
-refs.paginationList.addEventListener('click', e => {
+refs.paginationList.addEventListener('click', debounce(e => {
   event.page = Number(e.target.textContent) - 1;
   fetchEvents(event);
-});
+}, 250));
 
 // const bodyRef = document.querySelector('body');
 // bodyRef.addEventListener('keydown', e => {
