@@ -4,9 +4,11 @@ import refs from '../refs';
 import makePaginationList from '../pagination/pagination';
 import debounce from 'lodash.debounce';
 
-// refs.form.addEventListener('input', onSearch);
 
-refs.form.addEventListener('input', debounce(onSearch, 500));
+refs.form.addEventListener('input', onSearch);
+
+
+// refs.form.addEventListener('input', debounce(onSearch, 500));
 
 const event = new api('Concert', 'US');
 

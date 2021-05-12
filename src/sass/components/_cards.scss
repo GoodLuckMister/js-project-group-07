@@ -41,6 +41,7 @@
   font-size: 14px;
   line-height: 1.2;
   text-align: center;
+  margin-top: 5px;
 
   @include for-size('tablet') {
     font-size: 16px;
@@ -55,6 +56,7 @@
   font-size: 14px;
   line-height: 1.2;
   text-align: center;
+  margin-top: 5px;
 
   @include for-size('tablet') {
     font-size: 16px;
@@ -69,9 +71,21 @@
   font-size: 12px;
   line-height: 1.25;
   text-align: center;
+  margin-top: 5px;
 
   @include for-size('tablet') {
     font-size: 14px;
     line-height: 1.2;
+  }
+}
+
+.card__event-image {
+  width: 128px;
+  height: 161px;
+  border-radius: 50px 0px;
+
+  @include for-size('tablet') {
+    width: 180px;
+    height: 227px;
   }
 }
