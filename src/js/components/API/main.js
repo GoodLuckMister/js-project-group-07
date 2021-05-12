@@ -1,9 +1,11 @@
 import api from './discoveryAPI';
 import cards from '../renderCard/renderCard';
 import refs from '../refs';
-import makePaginationList from '../pagination/pagination'
+import makePaginationList from '../pagination/pagination';
+import debounce from 'lodash.debounce';
 
-refs.form.addEventListener('submit', onSearch);
+
+refs.form.addEventListener('submit', debounce(onSearch, 500));
 const event = new api('Concert', 'US');
 //! вынес fetch в функцию, что бы вызвать ее при клике на номер страницы
 function fetchEvents(event) {
@@ -19,10 +21,10 @@ function fetchEvents(event) {
 }
 
 function onSearch(e) {
-  e.preventDefault();
 
-  event.query = e.target.elements.search.value;
-  event.location = e.target.elements.country.value;
+ event.query = e.currentTarget.elements.search.value;
+  event.location = e.currentTarget.elements.country.value;
+  fetchEvents(event);
 }
 
 fetchEvents(event)
