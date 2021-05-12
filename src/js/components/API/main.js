@@ -4,8 +4,11 @@ import refs from '../refs';
 import makePaginationList from '../pagination/pagination';
 import debounce from 'lodash.debounce';
 
+<
+refs.form.addEventListener('input', onSearch);
 
 refs.form.addEventListener('submit', debounce(onSearch, 500));
+
 const event = new api('Concert', 'US');
 //! вынес fetch в функцию, что бы вызвать ее при клике на номер страницы
 function fetchEvents(event) {
