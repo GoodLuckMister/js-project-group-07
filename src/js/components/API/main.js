@@ -3,7 +3,7 @@ import cards from '../renderCard/renderCard';
 import refs from '../refs';
 import makePaginationList from '../pagination/pagination'
 
-refs.form.addEventListener('submit', onSearch);
+refs.form.addEventListener('input', onSearch);
 const event = new api('Concert', 'US');
 //! вынес fetch в функцию, что бы вызвать ее при клике на номер страницы
 function fetchEvents(event) {
@@ -19,10 +19,10 @@ function fetchEvents(event) {
 }
 
 function onSearch(e) {
-  e.preventDefault();
 
-  event.query = e.target.elements.search.value;
-  event.location = e.target.elements.country.value;
+ event.query = e.currentTarget.elements.search.value;
+  event.location = e.currentTarget.elements.country.value;
+  fetchEvents(event);
 }
 
 fetchEvents(event)

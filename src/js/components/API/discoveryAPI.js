@@ -28,7 +28,7 @@ export default class {
   }
   set query(newKeyword) {
     this.keyword = newKeyword;
-    resetPage();
+    this.resetPage();
   }
   get location() {
     return this.country;
