@@ -7,7 +7,8 @@ import onSearch from '../search-form/search-form-logic';
 
 
 
-refs.form.addEventListener('input', debounce(onSearch, 500));
+refs.form.elements.search.addEventListener('input', debounce(onSearch, 500));
+
 
 export const event = new api('Concert', 'US');
 
