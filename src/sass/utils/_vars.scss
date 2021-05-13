@@ -8,6 +8,7 @@ $colors: (
   'info': #0e0e0e,
   'btn-bg': #4c00fe,
   'header-bg-color': rgba(11, 11, 11, 0.5),
+  'cards-border-color': rgba(220, 86, 197, 0.3),
 );
 
 @function getColor($key) {
