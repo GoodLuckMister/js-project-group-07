@@ -1,6 +1,8 @@
 {{#each this}}
 <li class="events-section__item">
-    <img class="card__event-image" src="{{images.[7].url}}" width="180" height="227" alt="{{name}}">
+    <div class="card__event-image_container">
+        <img class="card__event-image" src="{{images.[7].url}}" width="180" height="227" alt="{{name}}">
+    </div>
     <p class="card__event-title">{{name}}</p>
     <p class="card__event-date">{{dates.start.localDate}}</p>
     <p class="card__event-place">{{_embedded.venues.[0].name}}</p>
