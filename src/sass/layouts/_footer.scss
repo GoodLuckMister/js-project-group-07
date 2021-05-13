@@ -1,3 +1,27 @@
-.footer {
-  padding: 80px 0px 10px 0px;
+footer {
+  padding-bottom: 27px;
+
+  @media (min-width: 768px) {
+    padding-top: 5px;
+    padding-bottom: 18px;
+  }
+
+  @media (min-width: 768px) {
+    padding-top: 15px;
+  }
 }
+
+.footer-container {
+  display: block;
+  text-align: center;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+
+  color: getColor('form-text');
+
+  @media (min-width: 768px) {
+    display: flex;
+    justify-content: center;
+  }
+
