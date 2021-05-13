@@ -78,7 +78,10 @@
                 background-color: getColor('accent');
             }
         }
-
+        &.price .modal-content__icon--ticket {
+            width: 24px;
+            height: 24px;
+        }
     }
 
     & h3 {
@@ -108,13 +111,14 @@
     }
     }
 
-    .modal-content__button-more {
-        display: inline-block;
+    &__button-more {
+        display: block;
         text-decoration: none;
         text-transform: uppercase;
         color: getColor('btn-bg');
         background-color: transparent;
         padding: 10px 3px;
+        margin: 0 auto;
         border-radius: 5px;
         border: 1px solid getColor('btn-bg');
 
@@ -127,30 +131,36 @@
         &:focus {
             background-color: getColor('accent');
             color: getColor('light');
+            border-color: getColor('accent');
         }
     }
-
 
     .modal__button.close {
         position: absolute;
         display: flex;
         align-items: center;
         justify-content: center;
-        top: 25px;
-        right: 25px;
+        top: 15px;
+        right: 15px;
         // width: 25px;
         // height: 25px;
-        width: 17px;
-        height: 17px;
+        width: 37px;
+        height: 37px;
+        border-radius: 50%;
         padding: 0;
         background-color: transparent;
         border: none;
-        fill: getColor('btn-bg');
    
-        // &:hover,
-        // &:focus {
-        //     fill: getColor('accent');
-        // }
+        &:hover .modal__icon--close,
+        &:focus .modal__icon--close {
+            fill: getColor('accent');
+        }
+
+        & .modal__icon--close {
+            width: 17px;
+            height: 17px;
+            fill: getColor('btn-bg');
+        }
     }
 
 }
