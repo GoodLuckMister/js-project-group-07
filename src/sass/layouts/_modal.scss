@@ -12,55 +12,114 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    // width: 930px;
+    transform: translate(-50%, 50%);
     width: 272px;
     margin: auto;
-    // padding: 30px;
     padding: 75px 14px 104px;
-    // border-top-left-radius: 300px;
-    // border-bottom-right-radius: 300px;
-    // border-radius: 300px 0px;
     border-radius: 150px 0px;
     background-color: getColor('modal-bg');
+    
+    @include for-size('tablet') {
+        width: 595px;
+        padding: 28px 17px 56px 50px;
+        border-radius: 300px 0px;
+        top: 160px;
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+
+    @include for-size('desktop') {
+        width: 930px;
+        padding: 62px 30px;
+        border-radius: 300px 0px;
+        top: 200px;
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
 
     &__circle-pic {
         display: block;
-        // margin: 0 auto 41px;
         margin: 0 auto 18px;
-        // width: 132px;
-        // height: 132px;
         width: 102px;
         height: 102px;
         border-radius: 50%;
-      
         object-fit: cover;
+        
+        @include for-size('tablet') {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 41px;
+        }
+        
+        @include for-size('desktop') {
+            width: 132px;
+            height: 132px;
+            margin: 0 auto 41px;
+        }
     }
 
-    // &__event-stats {
-    //     display: none;
-    // }
+    &__event-stats {
+        display: flex;
+        
+        @include for-size('tablet') {
+            margin-bottom: 45px;
+        }
+
+        @include for-size('desktop') {
+            margin-bottom: 45px;
+        }
+    }
 
     &__event-stats__pic-preview {
-        display: none;
-        // width: 360px;
-        // margin-right: 60px;
+        align-items: flex-start;
+        object-fit: cover;
 
+        @include for-size('mobile') {
+            display: none;
+        }
+        
+        @include for-size('tablet') {
+            display: inline-block;
+            width: 233px;
+            margin-right: 30px;
+        }
+
+        @include for-size('desktop') {
+            width: 360px;
+            height: 641px;
+            margin-right: 60px;
+        }
     }
 
     &__event-stats__event-about {
-        display: inline;
-        text-align: center;
+        display: block;
+        
+        @include for-size('mobile') {
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        @include for-size('tablet') {
+            text-align: left;
+            margin-left: 0;
+        }
+
+        @include for-size('desktop') {
+            text-align: left;
+        }
     
     & li {
         margin-bottom: 10px;
+        @include for-size ('desktop'){
+            margin-bottom: 20px;
+        }
 
         &.price .modal-content__icon--ticket,
         &.price .modal-content__event-about__event-prices {
             display: inline-block;
         }
         &.price .button {
-            display: inline-block;
+            display: block;
             text-decoration: none;
             text-transform: uppercase;
             color: getColor('light');
@@ -68,10 +127,7 @@
             padding: 10px 19px;
             border-radius: 5px;
 
-            font-style: normal;
-            font-weight: 500;
-            font-size: 16px;
-            line-height: 1.25;
+            @include fonts(500, 16px, 1.25);
 
             &:hover,
             &:focus {
@@ -80,7 +136,12 @@
         }
         &.price .modal-content__icon--ticket {
             width: 24px;
-            height: 24px;
+            height: 16px;
+
+            @include for-size ('desktop') {
+                width: 29px;
+                height: 19px;
+            }
         }
     }
 
@@ -89,25 +150,32 @@
         color: getColor('accent');
         margin-bottom: 5px;
 
-        font-style: normal;
-        font-weight: 600;
-        font-size: 20px;
-        line-height: 1,2;
+        // font-style: normal;
+        @include fonts (600, 20px, 1.2);
 
+        @include for-size('desktop') {
+            @include fonts (600, 24px, 1.2);
+        }
     }
 
     & p {
         color: getColor('info');
         margin-bottom: 0;
 
-        font-style: normal;
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 1.25;
+        // font-style: normal;
+        @include fonts (400, 16px, 1.25);
+
+        @include for-size ('desktop') {
+            @include fonts (400, 18px, 1.25)
+        }
     }
 
     & p:not(:last-child) {
         margin-bottom: 3px;
+
+        @include for-size('desktop') {
+            margin-bottom: 5px;
+        }
     }
     }
 
@@ -142,8 +210,6 @@
         justify-content: center;
         top: 15px;
         right: 15px;
-        // width: 25px;
-        // height: 25px;
         width: 37px;
         height: 37px;
         border-radius: 50%;
@@ -160,6 +226,11 @@
             width: 17px;
             height: 17px;
             fill: getColor('btn-bg');
+
+            @include for-size ('desktop') {
+                width: 25px;
+                height: 25px;
+            }
         }
     }
 
