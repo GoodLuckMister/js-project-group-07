@@ -1,37 +1,35 @@
 import api from './discoveryAPI';
 import cards from '../renderCard/renderCard';
 import refs from '../refs';
-import makePaginationList from '../pagination/pagination'
+import makePaginationList from '../pagination/pagination';
+import debounce from 'lodash.debounce';
+import onSearch from '../search-form/search-form-logic';
 
-refs.form.addEventListener('submit', onSearch);
-const event = new api('Concert', 'US');
-//! вынес fetch в функцию, что бы вызвать ее при клике на номер страницы
-function fetchEvents(event) {
+
+
+refs.form.addEventListener('input', debounce(onSearch, 500));
+
+export const event = new api('Concert', 'US');
+
+export function fetchEvents(event) {
   event
-  .fetchApiServiceAll()
-  .then(r => {
-    console.log(r._embedded.events);
-    //! убрал return, он здесь ничего не делает, а мне нужно прописать пагинацию после рендера
-    cards(r._embedded.events, refs.cardsList);
-    makePaginationList(r, event)
-  })
-  .catch(e => console.log('hello', e));
+    .fetchApiServiceAll()
+    .then(r => {
+      console.log(r._embedded.events);
+
+      cards(r._embedded.events, refs.cardsList);
+      makePaginationList(r, event);
+    })
+    .catch(e => console.log('hello', e));
 }
 
-function onSearch(e) {
-  e.preventDefault();
 
-  event.query = e.target.elements.search.value;
-  event.location = e.target.elements.country.value;
-}
+fetchEvents(event);
 
-fetchEvents(event)
-
-refs.paginationList.addEventListener('click', (e) => {
-  
-  event.page = Number(e.target.textContent) - 1
-  fetchEvents(event)
-})
+refs.paginationList.addEventListener('click', debounce(e => {
+  event.page = Number(e.target.textContent) - 1;
+  fetchEvents(event);
+}, 250));
 
 // const bodyRef = document.querySelector('body');
 // bodyRef.addEventListener('keydown', e => {
