@@ -15,30 +15,40 @@ export default function makePaginationList(r, api) {
 }
 
 function paginationMarkup(r, api) {
-    const lastPage = r.page.totalPages > 50 ? 50 : r.page.totalPages;
+    const totalPages = r.page.totalPages > 50 ? 50 : r.page.totalPages;
+    const currentPage = api.page
+    console.log('totalPages',totalPages);
+    console.log('currentPage', currentPage);
 
-    if (lastPage >= 0 && lastPage <= 4) {
+    if (totalPages === 0) {
+        return
+    }
+
+    if (totalPages >= 1 && totalPages <= 5) {
         let template = '';
-         for (let i = 0; i <= lastPage; i++) {
-        template += ` <li class="pagination__item page"><button class="pagination__button">${i + 1}</button></li>`
+         for (let i = 1; i <= totalPages; i++) {
+        template += ` <li class="pagination__item page"><button class="pagination__button">${i}</button></li>`
          }
         refs.paginationList.innerHTML = template
+        return
     }
    
-    if (api.page < 4) {
-      refs.paginationList.innerHTML = `<li class="pagination__item page"><button class="pagination__button">1</button></li> <li class="pagination__item page"><button class="pagination__button">2</button></li> <li class="pagination__item page"><button class="pagination__button">3</button></li> <li class="pagination__item page"><button class="pagination__button">4</button></li> <li class="pagination__item page"><button class="pagination__button">5</button></li> <li class="pagination__item"><button class="pagination__button" disabled>...</button></li> <li class="pagination__item page"><button class="pagination__button">${lastPage}</button></li>`;
-        
-    }
-    
-    if (api.page >= 4) {
-      refs.paginationList.innerHTML = `<li class="pagination__item page"><button class="pagination__button">1</button></li> <li class="pagination__item"><button class="pagination__button" disabled>...</button></li> <li class="pagination__item page"><button class="pagination__button">${api.page - 1}</button></li> <li class="pagination__item page"><button class="pagination__button">${api.page}</button></li> <li class="pagination__item page"><button class="pagination__button">${api.page + 1}</button></li> <li class="pagination__item page"><button class="pagination__button">${api.page + 2}</button></li> <li class="pagination__item page"><button class="pagination__button">${api.page + 3}</button></li> <li class="pagination__item"><button class="pagination__button" disabled>...</button></li> <li class="pagination__item page"><button class="pagination__button">${lastPage}</button></li>`;
-        
+    if (currentPage < 4) {
+      refs.paginationList.innerHTML = `<li class="pagination__item page"><button class="pagination__button">1</button></li> <li class="pagination__item page"><button class="pagination__button">2</button></li> <li class="pagination__item page"><button class="pagination__button">3</button></li> <li class="pagination__item page"><button class="pagination__button">4</button></li> <li class="pagination__item page"><button class="pagination__button">5</button></li> <li class="pagination__item"><button class="pagination__button" disabled>...</button></li> <li class="pagination__item page"><button class="pagination__button">${totalPages}</button></li>`;
+        return
     }
 
-    if (api.page >= lastPage - 4 || api.page === lastPage) {
-     refs.paginationList.innerHTML = `<li class="pagination__item page"><button class="pagination__button">1</button></li> <li class="pagination__item"><button class="pagination__button" disabled>...</button></li> <li class="pagination__item page"><button class="pagination__button">${lastPage - 5}</button></li> <li class="pagination__item page"><button class="pagination__button">${lastPage - 4}</button></li> <li class="pagination__item page"><button class="pagination__button">${lastPage - 3}</button></li> <li class="pagination__item page"><button class="pagination__button">${lastPage - 2}</button></li> <li class="pagination__item page"><button class="pagination__button">${lastPage - 1}</button></li> <li class="pagination__item page"><button class="pagination__button">${lastPage}</button></li>`;
-        
+    if (currentPage >= totalPages - 4 || currentPage === totalPages) {
+     refs.paginationList.innerHTML = `<li class="pagination__item page"><button class="pagination__button">1</button></li> <li class="pagination__item"><button class="pagination__button" disabled>...</button></li> <li class="pagination__item page"><button class="pagination__button">${totalPages - 5}</button></li> <li class="pagination__item page"><button class="pagination__button">${totalPages - 4}</button></li> <li class="pagination__item page"><button class="pagination__button">${totalPages - 3}</button></li> <li class="pagination__item page"><button class="pagination__button">${totalPages - 2}</button></li> <li class="pagination__item page"><button class="pagination__button">${totalPages - 1}</button></li> <li class="pagination__item page"><button class="pagination__button">${totalPages}</button></li>`;
+        return
     }
+    
+    if (currentPage >= 4) {
+      refs.paginationList.innerHTML = `<li class="pagination__item page"><button class="pagination__button">1</button></li> <li class="pagination__item"><button class="pagination__button" disabled>...</button></li> <li class="pagination__item page"><button class="pagination__button">${currentPage - 1}</button></li> <li class="pagination__item page"><button class="pagination__button">${currentPage}</button></li> <li class="pagination__item page"><button class="pagination__button">${currentPage + 1}</button></li> <li class="pagination__item page"><button class="pagination__button">${currentPage + 2}</button></li> <li class="pagination__item page"><button class="pagination__button">${currentPage + 3}</button></li> <li class="pagination__item"><button class="pagination__button" disabled>...</button></li> <li class="pagination__item page"><button class="pagination__button">${totalPages}</button></li>`;
+        return
+    }
+
+    
 }
 
 
