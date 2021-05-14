@@ -4,6 +4,9 @@ import refs from '../refs';
 import makePaginationList from '../pagination/pagination';
 import debounce from 'lodash.debounce';
 import onSearch from '../search-form/search-form-logic';
+import createLogoMarkup from '../markup/logoMarkup';
+
+createLogoMarkup();
 
 
 
