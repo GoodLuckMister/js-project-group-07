@@ -1,13 +1,14 @@
 footer {
+  padding-top: 67px;
   padding-bottom: 27px;
 
-  @media (min-width: 768px) {
-    padding-top: 5px;
+  @include for-size('tablet') {
+    padding-top: 65px;
     padding-bottom: 18px;
   }
 
-  @media (min-width: 768px) {
-    padding-top: 15px;
+  @include for-size('desktop') {
+    padding-top: 85px;
   }
 }
 
@@ -18,10 +19,23 @@ footer {
   font-weight: normal;
   font-size: 14px;
 
-  color: getColor('form-text');
-
-  @media (min-width: 768px) {
+  @include for-size('tablet') {
     display: flex;
     justify-content: center;
   }
+}
+
+.footer-text {
+  color: getColor('form-text');
+}
+
+.footer-container__partTwo {
+  display: flex;
+  justify-content: center;
+
+  padding-left: 3px;
+}
+
+.footer__symbol-heart {
+  color: rgba($color: #d81204, $alpha: 2);
 }
