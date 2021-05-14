@@ -3,10 +3,6 @@ import cards from '../renderCard/renderCard';
 import refs from '../refs';
 import makePaginationList from '../pagination/pagination';
 import debounce from 'lodash.debounce';
-import onSearch from '../search-form/search-form-logic';
-
-
-refs.form.elements.search.addEventListener('input', debounce(onSearch, 500));
 
 
 export const event = new api('Concert', 'US');
