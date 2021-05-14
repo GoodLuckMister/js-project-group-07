@@ -18,7 +18,7 @@ h1,
 h2,
 h3,
 p {
-  margin-top: 0;
+  margin: 0;
   color: white;
 }
 
@@ -31,7 +31,7 @@ ul {
 body {
   margin: 0;
   font-family: Montserrat, sans-serif;
-  background-color: black;
+  position: relative;
 }
 
 .container {

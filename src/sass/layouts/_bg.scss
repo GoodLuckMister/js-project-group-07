@@ -1,0 +1,50 @@
+main,
+footer {
+  background-color: black;
+  @include for-size(tablet) {
+    background-image: url('../../src/images/our-images/bg-body_tablet.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    @media screen and (min-device-pixel-ratio: 2),
+      screen and (-webkit-min-device-pixel-ratio: 2),
+      screen and (-o-min-device-pixel-ratio: 2/1),
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
+      background-image: url('../../src/images/our-images/bg-body_tablet@2x.jpg');
+    }
+  }
+
+  @include for-size(desktop) {
+    background-image: url('../../src/images/our-images/bg-body.jpg');
+
+    @media screen and (min-device-pixel-ratio: 2),
+      screen and (-webkit-min-device-pixel-ratio: 2),
+      screen and (-o-min-device-pixel-ratio: 2/1),
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
+      background-image: url('../../src/images/our-images/bg-body@2x.jpg');
+    }
+  }
+}
+
+body::before {
+  @include for-size(tablet) {
+    content: url('../../src/images/our-images/decor_tablet.png');
+    position: absolute;
+    width: 595px;
+    height: 2946px;
+    left: 86px;
+    top: -20px;
+    z-index: -100;
+  }
+
+  @include for-size(desktop) {
+    content: url('../../src/images/our-images/decor.png');
+    width: 1050px;
+    height: 2600px;
+    left: 115px;
+    top: -30px;
+  }
+}

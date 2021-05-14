@@ -1,8 +1,8 @@
 .events-section {
-  margin-bottom: 60px;
+  // margin-bottom: 60px;
 
   @include for-size('desktop') {
-    margin-bottom: 80px;
+    // margin-bottom: 80px;
   }
 }
 
@@ -27,10 +27,51 @@
 .events-section__item {
   width: 138px;
   height: 231px;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 250ms $cubic;
 
+  &:hover,
+  &:focus {
+    animation-name: selectItem;
+    animation-duration: 700ms;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    @keyframes selectItem {
+      0% {
+        transform: scale(1);
+      }
+
+      100% {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  &:hover > .card__event-image_container::after {
+    background-color: getColor('cards-border-color');
+  }
   @include for-size('tablet') {
     width: 194px;
     height: 312px;
+  }
+
+  &::before {
+    display: block;
+    position: absolute;
+    right: 0;
+    content: '';
+    width: 109px;
+    height: 101px;
+    border: 1px solid getColor('cards-border-color');
+    box-sizing: border-box;
+    border-radius: 50px 0px;
+
+    @include for-size(tablet) {
+      width: 153px;
+      height: 143px;
+    }
   }
 }
 
@@ -41,6 +82,7 @@
   font-size: 14px;
   line-height: 1.2;
   text-align: center;
+  margin-top: 5px;
 
   @include for-size('tablet') {
     font-size: 16px;
@@ -55,6 +97,7 @@
   font-size: 14px;
   line-height: 1.2;
   text-align: center;
+  margin-top: 5px;
 
   @include for-size('tablet') {
     font-size: 16px;
@@ -69,9 +112,56 @@
   font-size: 12px;
   line-height: 1.25;
   text-align: center;
+  margin-top: 5px;
 
   @include for-size('tablet') {
     font-size: 14px;
     line-height: 1.2;
+  }
+
+  &::before {
+    display: block;
+    position: absolute;
+    left: 0;
+    content: '';
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+    background-repeat: no-repeat;
+    background-image: url(/images/our-images/Vector.svg);
+
+    // @include for-size(tablet) {
+    // }
+  }
+}
+
+.card__event-image {
+  width: 128px;
+  height: 161px;
+  border-radius: 50px 0px;
+
+  object-fit: cover;
+
+  position: relative;
+  z-index: 2;
+  &_container {
+    position: relative;
+    &::after {
+      z-index: 1;
+      display: block;
+      width: 100%;
+      height: 100%;
+      content: '';
+      border: 1px solid rgba(220, 86, 197, 0.3);
+      border-radius: 50px 0px;
+      position: absolute;
+      top: -13px;
+      left: 14px;
+    }
+  }
+
+  @include for-size('tablet') {
+    width: 180px;
+    height: 227px;
   }
 }

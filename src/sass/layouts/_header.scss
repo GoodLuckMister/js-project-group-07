@@ -7,7 +7,7 @@
   position: relative;
   padding-top: 80px;
 
-  @media (min-width: 768px) {
+  @include for-size(tablet) {
     padding-top: 40px;
   }
 
@@ -35,8 +35,7 @@
       url('../../src/images/our-images/bg_320@2x.jpg');
   }
 
-  @media screen and (min-width: 768px) {
-    min-width: 768px;
+  @include for-size(tablet) {
     height: 364px;
     margin-left: auto;
     margin-right: auto;
@@ -65,8 +64,7 @@
     }
   }
 
-  @media screen and (min-width: 1280px) {
-   
+  @include for-size(desktop) {
     height: 446px;
 
     background-color: getColor('header-bg-color');
@@ -91,7 +89,7 @@
     }
   }
 
-  .event-text{
+  .event-text {
     font-weight: 900;
     text-align: center;
     color: getColor(accent);
@@ -109,11 +107,12 @@
       margin-bottom: 50px;
     }
   }
-  .logo{
-    img{
+  .logo {
+    img {
       position: absolute;
       top: 0;
       left: 0;
+      z-index: 11;
     }
   }
 }
@@ -130,12 +129,11 @@
     rgba(14, 14, 14, 0.8) 100%
   );
 
-  @media screen and (min-width: 768px) {
-    width: 768px;
+  @include for-size(tablet) {
+    height: 102px;
   }
 
-  @media screen and (min-width: 1280px) {
-    width: 1280px;
+  @include for-size(desktop) {
     top: 344px;
     background: linear-gradient(
       180deg,
