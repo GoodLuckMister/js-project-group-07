@@ -13,12 +13,12 @@ export default class {
       .then(response => response.json())
       .catch(error => console.error(error));
   }
-  //   async fetchDetails(eventID) {
-  //   const url = `${BASIC_URL}events/${eventID}?apikey=${KEY}`;
-  //   return await fetch(url)
-  //     .then(response => response.json())
-  //     .catch(error => console.error(error));
-  // }
+  async fetchDetails(eventID) {
+    const url = `${BASIC_URL}events/${eventID}.json?apikey=${KEY}`;
+    return await fetch(url)
+      .then(response => response.json())
+      .catch(error => console.error(error));
+  }
   incrementPage() {
     this.page += 1;
   }
