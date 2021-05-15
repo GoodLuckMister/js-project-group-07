@@ -2,8 +2,6 @@ import api from './discoveryAPI';
 import cards from '../renderCard/renderCard';
 import refs from '../refs';
 import makePaginationList from '../pagination/pagination';
-import debounce from 'lodash.debounce';
-
 
 export const event = new api('Concert', 'US');
 
@@ -19,17 +17,7 @@ export function fetchEvents(event) {
     .catch(e => console.log('hello', e));
 }
 
-
 fetchEvents(event);
-// event.fetchDetails('G5diZ4VBwFSX2');
-
-refs.paginationList.addEventListener('click', debounce(e => {
-  event.page = Number(e.target.textContent) - 1;
-  fetchEvents(event);
-}, 250));
-
-
-
 
 // const bodyRef = document.querySelector('body');
 // bodyRef.addEventListener('keydown', e => {
