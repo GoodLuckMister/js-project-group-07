@@ -1,8 +1,33 @@
 body {
-  background-color: #0e0e0e;
-  background-image: url('../../src/images/our-images/bg-body.jpg');
+  background-color: getColor('body-bg-color');
   background-repeat: no-repeat;
-  background-size: cover;
+  border: 1px solid #212121;
+  background-size: auto auto;
+
+  @include for-size(desktop) {
+    background-image: url('../../src/images/bg-images/ellipse_left_desktop.png'),
+      url('../../src/images/bg-images/ellipse_left_top_centre.png'),
+      url('../../src/images/bg-images/ellipse_left_top_border.png'),
+      url('../../src/images/bg-images/line_left_top.png'),
+      url('../../src/images/bg-images/ellipse_left_bottom_border.png'),
+      url('../../src/images/bg-images/ellipse_left_bottom_centre.png'),
+      url('../../src/images/bg-images/line_left_bottom.png'),
+      url('../../src/images/bg-images/ellipse_right_top.png'),
+      url('../../src/images/bg-images/ellipse_right_bottom_desktop.png'),
+      url('../../src/images/bg-images/ellipse_right_border.png'),
+      url('../../src/images/bg-images/ellipse_left_top_centre.png'),
+      url('../../src/images/bg-images/line_right_bottom.png'),
+      url('../../src/images/bg-images/line_right_top.png');
+
+    background-size: auto auto, auto auto, auto auto, auto auto, auto auto,
+      auto auto;
+
+    background-position: 30px 1254px, 47px 782px, 7px 742px, 115px 0px,
+      7px 2530px, 47px 2570px, 115px 958px, 916px 570px, 916px 2130px,
+      1057px 1423px, 1097px 1463px, 1165px 1640px, 1165px 155px;
+  }
+
+
 
   // @include for-size(tablet) {
   //   width: 768px;
@@ -35,6 +60,7 @@ body {
   //     background-image: url('../../src/images/our-images/bg-body@2x.jpg');
   //   }
   // }
+
 }
 
 // body::after {
