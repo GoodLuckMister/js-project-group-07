@@ -1,50 +1,84 @@
-main,
-footer {
-  background-color: black;
-  @include for-size(tablet) {
-    background-image: url('../../src/images/our-images/bg-body_tablet.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-
-    @media screen and (min-device-pixel-ratio: 2),
-      screen and (-webkit-min-device-pixel-ratio: 2),
-      screen and (-o-min-device-pixel-ratio: 2/1),
-      screen and (min-resolution: 192dpi),
-      screen and (min-resolution: 2dppx) {
-      background-image: url('../../src/images/our-images/bg-body_tablet@2x.jpg');
-    }
-  }
+body {
+  background-color: getColor('body-bg-color');
+  background-repeat: no-repeat;
+  border: 1px solid #212121;
+  background-size: auto auto;
 
   @include for-size(desktop) {
-    background-image: url('../../src/images/our-images/bg-body.jpg');
+    background-image: url('../../src/images/bg-images/ellipse_left_desktop.png'),
+      url('../../src/images/bg-images/ellipse_left_top_centre.png'),
+      url('../../src/images/bg-images/ellipse_left_top_border.png'),
+      url('../../src/images/bg-images/line_left_top.png'),
+      url('../../src/images/bg-images/ellipse_left_bottom_border.png'),
+      url('../../src/images/bg-images/ellipse_left_bottom_centre.png'),
+      url('../../src/images/bg-images/line_left_bottom.png'),
+      url('../../src/images/bg-images/ellipse_right_top.png'),
+      url('../../src/images/bg-images/ellipse_right_bottom_desktop.png'),
+      url('../../src/images/bg-images/ellipse_right_border.png'),
+      url('../../src/images/bg-images/ellipse_left_top_centre.png'),
+      url('../../src/images/bg-images/line_right_bottom.png'),
+      url('../../src/images/bg-images/line_right_top.png');
 
-    @media screen and (min-device-pixel-ratio: 2),
-      screen and (-webkit-min-device-pixel-ratio: 2),
-      screen and (-o-min-device-pixel-ratio: 2/1),
-      screen and (min-resolution: 192dpi),
-      screen and (min-resolution: 2dppx) {
-      background-image: url('../../src/images/our-images/bg-body@2x.jpg');
-    }
+    background-size: auto auto, auto auto, auto auto, auto auto, auto auto,
+      auto auto;
+
+    background-position: 30px 1254px, 47px 782px, 7px 742px, 115px 0px,
+      7px 2530px, 47px 2570px, 115px 958px, 916px 570px, 916px 2130px,
+      1057px 1423px, 1097px 1463px, 1165px 1640px, 1165px 155px;
   }
+
+
+
+  // @include for-size(tablet) {
+  //   width: 768px;
+  //   height: 2582px;
+  //   background-position: 0 364px;
+
+  //   background-image: url('../../src/images/our-images/bg-body_tablet.jpg');
+
+  //   @media screen and (min-device-pixel-ratio: 2),
+  //     screen and (-webkit-min-device-pixel-ratio: 2),
+  //     screen and (-o-min-device-pixel-ratio: 2/1),
+  //     screen and (min-resolution: 192dpi),
+  //     screen and (min-resolution: 2dppx) {
+  //     background-image: url('../../src/images/our-images/bg-body_tablet@2x.jpg');
+  //   }
+  // }
+
+  // @include for-size(desktop) {
+  //   width: 1280px;
+  //   height: 1930px;
+  //   background-position: 0 446px;
+
+  //   background-image: url('../../src/images/our-images/bg-body.jpg');
+
+  //   @media screen and (min-device-pixel-ratio: 2),
+  //     screen and (-webkit-min-device-pixel-ratio: 2),
+  //     screen and (-o-min-device-pixel-ratio: 2/1),
+  //     screen and (min-resolution: 192dpi),
+  //     screen and (min-resolution: 2dppx) {
+  //     background-image: url('../../src/images/our-images/bg-body@2x.jpg');
+  //   }
+  // }
+
 }
 
-body::before {
-  @include for-size(tablet) {
-    content: url('../../src/images/our-images/decor_tablet.png');
-    position: absolute;
-    width: 595px;
-    height: 2946px;
-    left: 86px;
-    top: -20px;
-    z-index: -100;
-  }
+// body::after {
+//   content: '';
+//   position: absolute;
+//   top: 0px;
+//   z-index: 1;
+//   @include for-size(tablet) {
+//     background: url('../../src/images/our-images/decor_tablet.png');
+//     width: 595px;
+//     height: 2946px;
+//     left: 86px;
+//   }
 
-  @include for-size(desktop) {
-    content: url('../../src/images/our-images/decor.png');
-    width: 1050px;
-    height: 2600px;
-    left: 115px;
-    top: -30px;
-  }
-}
+//   @include for-size(desktop) {
+//     background: url('../../src/images/our-images/decor.png');
+//     width: 1050px;
+//     height: 2376px;
+//     left: 115px;
+//   }
+// }

@@ -5,6 +5,9 @@
   }
 
   &__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 30px;
     height: 30px;
   }
@@ -13,7 +16,7 @@
     width: 100%;
     height: 100%;
     background: transparent;
-    border: none;
+    border: 0px;
     cursor: pointer;
 
     font-family: Montserrat, sans-serif;
@@ -25,6 +28,13 @@
     @include for-size('tablet') {
       @include fonts(400, 16px, 1.25);
     }
+
+    &:focus {
+      border: 1px solid getColor('accent');
+      border-radius: 10px 0px;
+      transform: scale(1.15);
+      outline: transparent;
+    }
   }
 }
 
@@ -34,9 +44,11 @@
 }
 
 .page {
-  &:hover,
-  &:focus {
+  transition: border 250ms $cubic, transform 500ms $cubic ;
+  
+  &:hover {
     border: 1px solid getColor('accent');
     border-radius: 10px 0px;
+    transform: scale(1.15)
   }
 }

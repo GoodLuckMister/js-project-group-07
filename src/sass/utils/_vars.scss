@@ -3,13 +3,14 @@
 $colors: (
   'light': #ffffff,
   'accent': #dc56c5,
-  'modal-bg': #FFF2FD,
+  'modal-bg': #fff2fd,
   'form-text': #939393,
   'form-bg': rgba(255, 255, 255, 0.2),
   'info': #0e0e0e,
-  'btn-bg': #4c00fe,
+  'btn-bg': rgb(76, 0, 254),
   'header-bg-color': rgba(11, 11, 11, 0.5),
   'cards-border-color': rgba(220, 86, 197, 0.3),
+  'body-bg-color': #000000,
 );
 
 @function getColor($key) {
