@@ -1,58 +1,58 @@
 body {
-  background-color: black;
-  background-size: cover;
+  background-color: #0e0e0e;
+  background-image: url('../../src/images/our-images/bg-body.jpg');
   background-repeat: no-repeat;
-  position: relative;
+  background-size: cover;
 
-  @include for-size(tablet) {
-    width: 768px;
-    height: 2582px;
-    background-position: 0 364px;
+  // @include for-size(tablet) {
+  //   width: 768px;
+  //   height: 2582px;
+  //   background-position: 0 364px;
 
-    background-image: url('../../src/images/our-images/bg-body_tablet.jpg');
+  //   background-image: url('../../src/images/our-images/bg-body_tablet.jpg');
 
-    @media screen and (min-device-pixel-ratio: 2),
-      screen and (-webkit-min-device-pixel-ratio: 2),
-      screen and (-o-min-device-pixel-ratio: 2/1),
-      screen and (min-resolution: 192dpi),
-      screen and (min-resolution: 2dppx) {
-      background-image: url('../../src/images/our-images/bg-body_tablet@2x.jpg');
-    }
-  }
+  //   @media screen and (min-device-pixel-ratio: 2),
+  //     screen and (-webkit-min-device-pixel-ratio: 2),
+  //     screen and (-o-min-device-pixel-ratio: 2/1),
+  //     screen and (min-resolution: 192dpi),
+  //     screen and (min-resolution: 2dppx) {
+  //     background-image: url('../../src/images/our-images/bg-body_tablet@2x.jpg');
+  //   }
+  // }
 
-  @include for-size(desktop) {
-    width: 1280px;
-    height: 1930px;
-    background-position: 0 446px;
+  // @include for-size(desktop) {
+  //   width: 1280px;
+  //   height: 1930px;
+  //   background-position: 0 446px;
 
-    background-image: url('../../src/images/our-images/bg-body.jpg');
+  //   background-image: url('../../src/images/our-images/bg-body.jpg');
 
-    @media screen and (min-device-pixel-ratio: 2),
-      screen and (-webkit-min-device-pixel-ratio: 2),
-      screen and (-o-min-device-pixel-ratio: 2/1),
-      screen and (min-resolution: 192dpi),
-      screen and (min-resolution: 2dppx) {
-      background-image: url('../../src/images/our-images/bg-body@2x.jpg');
-    }
-  }
+  //   @media screen and (min-device-pixel-ratio: 2),
+  //     screen and (-webkit-min-device-pixel-ratio: 2),
+  //     screen and (-o-min-device-pixel-ratio: 2/1),
+  //     screen and (min-resolution: 192dpi),
+  //     screen and (min-resolution: 2dppx) {
+  //     background-image: url('../../src/images/our-images/bg-body@2x.jpg');
+  //   }
+  // }
 }
 
-body::after {
-  content: '';
-  position: absolute;
-  top: 0px;
-  z-index: 1;
-  @include for-size(tablet) {
-    background: url('../../src/images/our-images/decor_tablet.png');
-    width: 595px;
-    height: 2946px;
-    left: 86px;
-  }
+// body::after {
+//   content: '';
+//   position: absolute;
+//   top: 0px;
+//   z-index: 1;
+//   @include for-size(tablet) {
+//     background: url('../../src/images/our-images/decor_tablet.png');
+//     width: 595px;
+//     height: 2946px;
+//     left: 86px;
+//   }
 
-  @include for-size(desktop) {
-    background: url('../../src/images/our-images/decor.png');
-    width: 1050px;
-    height: 2376px;
-    left: 115px;
-  }
-}
+//   @include for-size(desktop) {
+//     background: url('../../src/images/our-images/decor.png');
+//     width: 1050px;
+//     height: 2376px;
+//     left: 115px;
+//   }
+// }
