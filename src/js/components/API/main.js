@@ -2,7 +2,10 @@ import api from './discoveryAPI';
 import cards from '../renderCard/renderCard';
 import refs from '../refs';
 import makePaginationList from '../pagination/pagination';
+
+
 import debounce from 'lodash.debounce';
+
 
 export const event = new api('Concert', 'US');
 event.fetchDetails('G5diZ4VBwFSX2').then(r => console.log(r));
@@ -20,6 +23,8 @@ export function fetchEvents(event) {
 }
 
 fetchEvents(event);
+
+
 // event.fetchDetails('G5diZ4VBwFSX2');
 
 refs.paginationList.addEventListener(
@@ -29,6 +34,7 @@ refs.paginationList.addEventListener(
     fetchEvents(event);
   }, 250),
 );
+
 
 // const bodyRef = document.querySelector('body');
 // bodyRef.addEventListener('keydown', e => {
