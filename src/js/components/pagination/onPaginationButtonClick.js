@@ -1,15 +1,13 @@
 import refs from '../refs';
 import debounce from 'lodash.debounce';
-import api from '../API/discoveryAPI';
+import { event } from '../API/main';
 import { fetchEvents } from '../API/main';
-
-const eventsApi = new api();
 
 refs.paginationList.addEventListener(
   'click',
   debounce(e => {
-    eventsApi.page = Number(e.target.textContent) - 1;
-    fetchEvents(eventsApi);
+    event.page = Number(e.target.textContent) - 1;
+    fetchEvents(event);
     scrollPageUp();
   }, 250),
 );
@@ -32,6 +30,3 @@ function removeCurrentPageOutline() {
     }
   }
 }
-
-const string = `hello hello ${'hello'}`;
-const a = 1;
