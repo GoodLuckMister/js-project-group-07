@@ -8,10 +8,12 @@ import renderModal from '../modal-fn/modalMarkup';
 
 export const event = new api('Concert', 'US');
 export function fetchId(eventId) {
-  event.fetchDetails(eventId).then(r => renderModal(r)).catch(e => console.log('error', e))
-};
-// event.fetchDetails('G5diZ4VBwFSX2').then(r => console.log(r))
-
+  event
+    .fetchDetails(eventId)
+    .then(r => renderModal(r))
+    .catch(e => console.log('error', e));
+}
+event.fetchDetails('G5diZ4VBwFSX2').then(r => console.log(r));
 
 export function fetchEvents(event) {
   event
