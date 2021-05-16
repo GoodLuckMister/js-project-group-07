@@ -3,9 +3,7 @@ import cards from '../renderCard/renderCard';
 import refs from '../refs';
 import makePaginationList from '../pagination/pagination';
 
-
 import debounce from 'lodash.debounce';
-
 
 export const event = new api('Concert', 'US');
 event.fetchDetails('G5diZ4VBwFSX2').then(r => console.log(r));
@@ -24,9 +22,6 @@ export function fetchEvents(event) {
 
 fetchEvents(event);
 
-
-// event.fetchDetails('G5diZ4VBwFSX2');
-
 refs.paginationList.addEventListener(
   'click',
   debounce(e => {
@@ -34,16 +29,3 @@ refs.paginationList.addEventListener(
     fetchEvents(event);
   }, 250),
 );
-
-
-// const bodyRef = document.querySelector('body');
-// bodyRef.addEventListener('keydown', e => {
-//   if (e.key === 'ArrowRight') {
-//     event.incrementPage();
-//     event.fetchApiServiceAll().then(r => console.log(r._embedded.events));
-//   }
-//   if (e.key === 'ArrowLeft') {
-//     event.decrementPage();
-//     event.fetchApiServiceAll().then(r => console.log(r._embedded.events));
-//   }
-// });
