@@ -1,10 +1,10 @@
 {{#each this}}
 <li class="events-section__item" id="{{id}}">
     <div class="card__event-image_container">
-        <img class="card__event-image" src="{{images.[7].url}}" width="180" height="227" alt="{{name}}">
+        <img class="card__event-image" src="{{images.[7].url}}" width="180" height="227" alt="{{name}}" id="{{id}}">
     </div>
-    <p class="card__event-title">{{name}}</p>
-    <p class="card__event-date">{{dates.start.localDate}}</p>
-    <p class="card__event-place">{{_embedded.venues.[0].name}}</p>
+    <p class="card__event-title" id="{{id}}">{{name}}</p>
+    <p class="card__event-date" id="{{id}}">{{dates.start.localDate}}</p>
+    <p class="card__event-place" id="{{id}}">{{_embedded.venues.[0].name}}</p>
 </li>
 {{/each}}
