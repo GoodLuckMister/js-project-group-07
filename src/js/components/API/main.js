@@ -4,9 +4,14 @@ import refs from '../refs';
 import makePaginationList from '../pagination/pagination';
 
 import debounce from 'lodash.debounce';
+import renderModal from '../modal-fn/modalMarkup';
 
 export const event = new api('Concert', 'US');
-event.fetchDetails('G5diZ4VBwFSX2').then(r => console.log(r));
+export function fetchId(eventId) {
+  event.fetchDetails(eventId).then(r => renderModal(r)).catch(e => console.log('error', e))
+};
+// event.fetchDetails('G5diZ4VBwFSX2').then(r => console.log(r))
+
 
 export function fetchEvents(event) {
   event
