@@ -1,5 +1,7 @@
 export default {
     cardsList: document.querySelector('.events-section__list'),
+    cardItem: document.querySelector('.events-section__item'),
+    cardImage: document.querySelector('.card__event-image'),
     form: document.querySelector('.form'),
     paginationList: document.querySelector('.pagination__list'),
     header: document.querySelector('.header'),
