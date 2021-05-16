@@ -8,6 +8,7 @@
             {{!-- <svg class="modal__icon--close">
               <use href="../images/inline-sprite.svg#icon-close"></use>
             </svg> --}}
+            X
     </button>
 
     <img class="modal-content__circle-pic" src={{images.[7].url}} alt="" />
@@ -18,7 +19,7 @@
         <ul class="modal-content__event-stats__event-about stats-list">
             <li class="stats-item info">
                 <h3 class="modal-content__event-about__event-title">Info</h3>
-                {{!-- <p class="modal-content__event-about__event-info">{{name}}</p> --}}
+                <p class="modal-content__event-about__event-info">{{info}}</p>
             </li>
             <li class="stats-item when">
                 <h3 class="modal-content__event-about__event-title">When</h3>
@@ -32,7 +33,7 @@
             </li>
             <li class="stats-item who">
                 <h3 class="modal-content__event-about__event-title">Who</h3>
-                <p class="modal-content__event-about__event-who">{{_embedded.attraction.[0].name}}</p>
+                <p class="modal-content__event-about__event-who">{{_embedded.attractions.[0].name}}</p>
             </li>
             <li class="stats-item price">
                 <h3 class="modal-content__event-about__event-title price">Prices</h3>
