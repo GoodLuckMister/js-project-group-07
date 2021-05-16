@@ -1,5 +1,5 @@
 import refs from '../refs';
-// import {fetchEvents} from '../API/main';
+import cards from '../renderCard/renderCard';
 import { event } from '../API/main';
 import showNotification from './notification';
 
