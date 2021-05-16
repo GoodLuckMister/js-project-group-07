@@ -26,7 +26,7 @@
 
 .events-section__item {
   width: 138px;
-  height: 242px;
+  height: 283px;
   cursor: pointer;
   position: relative;
   transition: background-color 250ms $cubic;
@@ -73,7 +73,7 @@
 
   @include for-size('tablet') {
     width: 196px;
-    height: 312px;
+    height: 350px;
   }
 
   &::before {
@@ -144,9 +144,7 @@
   }
 
   &::before {
-    display: block;
-    position: absolute;
-    left: 0;
+    display: inline-block;
     content: '';
     width: 6px;
     height: 9px;
