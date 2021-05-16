@@ -1,10 +1,15 @@
-import { notice } from '@pnotify/core';
-import '@pnotify/core/dist/BrightTheme.css';
+import { info } from '@pnotify/core';
+import '@pnotify/core/dist/Angeler.css';
 import "@pnotify/core/dist/PNotify.css";
 
-export default function showNotification () {
-  notice({
-      text: 'No mathes found',
-      delay: 2000
-})  
+
+export default function showNotification() {
+  info({
+    text: 'No mathes found',
+    styling: 'angeler',
+    mode: 'dark',
+    delay: 2000,
+    animation: 'fade',
+    animateSpeed: 'slow',
+  })
 };
