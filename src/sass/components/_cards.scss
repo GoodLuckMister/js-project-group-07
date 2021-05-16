@@ -26,7 +26,7 @@
 
 .events-section__item {
   width: 138px;
-  height: 231px;
+  height: 242px;
   cursor: pointer;
   position: relative;
   transition: background-color 250ms $cubic;
@@ -39,21 +39,21 @@
     animation-timing-function: linear;
     animation-direction: alternate;
     animation-iteration-count: infinite;
-    > .card__event-image_container{
+    > .card__event-image_container {
       position: relative;
       &::after {
-      z-index: 1;
-      display: block;
-      width: 100%;
-      height: 100%;
-      content: '';
-      border: 1px solid rgba(220, 86, 197, 0.3);
-      border-radius: 50px 0px;
-      position: absolute;
-      top: 0;
-      left: 0;
-      transform: scale(1.1);
-    }
+        z-index: 1;
+        display: block;
+        width: 100%;
+        height: 100%;
+        content: '';
+        border: 1px solid rgba(220, 86, 197, 0.3);
+        border-radius: 50px 0px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: scale(1.1);
+      }
     }
     @keyframes selectItem {
       0% {
@@ -67,20 +67,19 @@
   }
 
   &:hover::before,
-  &:focus::before{
+  &:focus::before {
     border: none;
   }
 
-  
   @include for-size('tablet') {
-    width: 194px;
+    width: 196px;
     height: 312px;
   }
 
   &::before {
     display: block;
     position: absolute;
-    right: 0;
+    right: 10px;
     content: '';
     width: 109px;
     height: 101px;
@@ -92,6 +91,7 @@
     @include for-size(tablet) {
       width: 153px;
       height: 143px;
+      right: 13px;
     }
   }
 }
@@ -134,10 +134,13 @@
   line-height: 1.25;
   text-align: center;
   margin-top: 5px;
+  margin: 0 auto;
+  width: 128px;
 
   @include for-size('tablet') {
     font-size: 14px;
     line-height: 1.2;
+    width: 180px;
   }
 
   &::before {
@@ -145,14 +148,16 @@
     position: absolute;
     left: 0;
     content: '';
-    width: 15px;
-    height: 15px;
-    margin-right: 5px;
+    width: 6px;
+    height: 9px;
+    margin-right: 3px;
     background-repeat: no-repeat;
     background-image: url(/images/our-images/Vector.svg);
 
-    // @include for-size(tablet) {
-    // }
+    @include for-size('tablet') {
+      width: 7px;
+      height: 10px;
+    }
   }
 }
 
@@ -164,11 +169,11 @@
   object-fit: cover;
 
   position: relative;
-  
+
   z-index: 2;
 
   @include for-size('tablet') {
-    width: 194px;
+    width: 180px;
     height: 227px;
   }
 }
