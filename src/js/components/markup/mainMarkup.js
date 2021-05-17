@@ -4,4 +4,4 @@ import renderCountriesDatalist from './renderCountriesDatalist';
 
 createLogoMarkup();
 
-refs.form.elements.country.addEventListener('focus', renderCountriesDatalist);
+// refs.form.elements.country.addEventListener('focus', renderCountriesDatalist);
