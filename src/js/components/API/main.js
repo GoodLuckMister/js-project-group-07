@@ -4,8 +4,13 @@ import refs from '../refs';
 import makePaginationList from '../pagination/pagination';
 
 import renderModal from '../modal-fn/modalMarkup';
+import { savedSearchRequest } from '../../webStorageApi/storageOfSearchQuery';
+import { savedCountry } from '../../webStorageApi/storageOfCounty';
 
-export const event = new api('Concert', 'US');
+const country = savedCountry || 'US';
+const request = savedSearchRequest || 'Concert';
+
+export const event = new api(request, country);
 export function fetchId(eventId) {
   event
     .fetchDetails(eventId)
