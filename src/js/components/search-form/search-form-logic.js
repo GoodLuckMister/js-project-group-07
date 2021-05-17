@@ -30,6 +30,7 @@ export default function onSearch(e) {
   event
     .fetchApiBySearch()
     .then(r => {
+      preloader.remove();
       if (!r._embedded) {
         return showNotification();
       }
