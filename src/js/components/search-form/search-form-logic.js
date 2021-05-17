@@ -6,9 +6,9 @@ import makePaginationList from '../pagination/pagination';
 
 // import throttle from 'lodash.throttle';
 
-export default function onSearch(e) {
-  event.query = e.target.value.trim();
-  // event.location = refs.form.elements.country.value;
+// export default function onSearch(e) {
+//   event.query = e.target.value.trim();
+// event.location = refs.form.elements.country.value;
 
 import { saveSearchRequest } from '../../webStorageApi/storageOfSearchQuery';
 import { saveCountry, savedCountry } from '../../webStorageApi/storageOfCounty';

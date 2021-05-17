@@ -21,7 +21,7 @@ export default class {
   }
 
   async fetchApiBySearch() {
-    const url = `${BASIC_URL}events.json?keyword=${this.keyword}&countryCode=${this.country}&page=${this.page}&apikey=${KEY}`;
+    const url = `${BASIC_URL}events.json?keyword=${this.keyword}&country=${this.country}&page=${this.page}&apikey=${KEY}`;
     return await fetch(url).then(response => response.json());
   }
 
