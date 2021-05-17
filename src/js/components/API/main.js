@@ -4,9 +4,18 @@ import refs from '../refs';
 import makePaginationList from '../pagination/pagination';
 import Preloader from '../preloader/Preloader';
 import renderModal from '../modal-fn/modalMarkup';
+import { savedSearchRequest } from '../../webStorageApi/storageOfSearchQuery';
+import { savedCountry } from '../../webStorageApi/storageOfCounty';
+
+
+const country = savedCountry || 'US';
+const request = savedSearchRequest || 'Concert';
+
+export const event = new api(request, country);
 
 export const event = new api('Concert', 'US');
 const preloader = new Preloader(refs.containerPreload);
+
 export function fetchId(eventId) {
   event
     .fetchDetails(eventId)
