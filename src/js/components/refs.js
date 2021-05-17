@@ -1,4 +1,5 @@
 export default {
+  containerPreload: document.querySelector('.preloader'),
   cardsList: document.querySelector('.events-section__list'),
   cardItem: document.querySelector('.events-section__item'),
   cardImage: document.querySelector('.card__event-image'),
@@ -12,4 +13,5 @@ export default {
   formList: document.querySelector('.form__list'),
   formListItems: document.querySelectorAll('.country-list__item'),
   formOverflow: document.querySelectorAll('.form__overflow'),
+  footer: document.querySelector('.footer'),
 };
