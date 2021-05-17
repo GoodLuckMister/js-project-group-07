@@ -9,7 +9,11 @@ export default function onEventClick(event) {
     event.preventDefault();
     
     refs.modalEl.classList.add('is-open');
-    
+    window.scrollTo({
+        top: 150,
+        left: 0,
+        behavior: 'smooth'
+    });
     const eventId = event.target.id;
     
     // const eventDataId = fetchId(eventId);
@@ -27,7 +31,8 @@ export default function onEventClick(event) {
     
     refs.modalEl.addEventListener('click', onModalClose);
     
-    console.log(refs.modalCloseBtn);
+
+    // console.log(refs.modalCloseBtn);
     // console.log(event.target.id);
    
 }
@@ -42,7 +47,8 @@ function onModalClose(event) {
     
     window.removeEventListener('keydown', onEscKeyPress);
     refs.modalEl.classList.remove('is-open');
-    console.log('click');
+    // console.log('click');
+    refs.modalEl.innerHTML = '';
 };
 
 function onEscKeyPress(event) {

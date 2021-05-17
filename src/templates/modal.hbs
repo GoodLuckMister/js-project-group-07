@@ -6,9 +6,11 @@
         class="modal__button close"
         data-action="close-modal">
             {{!-- <svg class="modal__icon--close">
-              <use href="../images/inline-sprite.svg#icon-close"></use>
+              <use href="images/our-images/sprite.svg#icon-close"></use>
             </svg> --}}
-            X
+            {{!-- <svg class="modal__icon--close">
+              <use href="/images/our-images/close.svg"></use>
+            </svg> --}}
     </button>
 
     <img class="modal-content__circle-pic" src={{images.[7].url}} alt="" />
@@ -39,9 +41,11 @@
                 <h3 class="modal-content__event-about__event-title price">Prices</h3>
                 {{#each priceRanges}}
                     {{!-- <svg class="modal-content__icon--ticket">
-                        <use href="../images/inline-sprite.svg#icon-ticket"></use>
+                        <use href="./images/our-images/icon-ticket.svg"></use>
                     </svg> --}}
+                    <div class="modal-content__icon--ticket"></div>
                     <p class="modal-content__event-about__event-prices">{{type}} {{min}}-{{max}} {{currency}}</p>
+                    <br>
                 {{/each}}
                 <a href={{url}} class="button modal-content__event-about__button-buy" target="_blank" data-action="buy-tickets">Buy tickets</a>
             </li>
