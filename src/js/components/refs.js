@@ -10,5 +10,5 @@ export default {
   modalCloseBtn: document.querySelector('button[data-action="close-modal"]'),
   modalOverlay: document.querySelector('.modal__overlay'),
   showMoreBtn: document.querySelector('button[data-action="show-more"]'),
+  footer: document.querySelector('.footer'),
 };
-
