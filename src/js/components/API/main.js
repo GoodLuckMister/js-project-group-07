@@ -1,46 +1,32 @@
 import api from './discoveryAPI';
 import cards from '../renderCard/renderCard';
 import refs from '../refs';
-import makePaginationList from '../pagination/pagination'
+import makePaginationList from '../pagination/pagination';
+import Preloader from '../preloader/Preloader';
+import renderModal from '../modal-fn/modalMarkup';
 
-refs.form.addEventListener('submit', onSearch);
-const event = new api('Concert', 'US');
-//! вынес fetch в функцию, что бы вызвать ее при клике на номер страницы
-function fetchEvents(event) {
+export const event = new api('Concert', 'US');
+const preloader = new Preloader(refs.containerPreload);
+export function fetchId(eventId) {
   event
-  .fetchApiServiceAll()
-  .then(r => {
-    console.log(r._embedded.events);
-    //! убрал return, он здесь ничего не делает, а мне нужно прописать пагинацию после рендера
-    cards(r._embedded.events, refs.cardsList);
-    makePaginationList(r, event)
-  })
-  .catch(e => console.log('hello', e));
+    .fetchDetails(eventId)
+    .then(r => renderModal(r))
+    .catch(e => console.log('error', e));
 }
 
-function onSearch(e) {
-  e.preventDefault();
+// event.fetchDetails('G5diZ4VBwFSX2').then(r => console.log(r))
 
-  event.query = e.target.elements.search.value;
-  event.location = e.target.elements.country.value;
+export function fetchEvents(event) {
+  preloader.show();
+
+  event
+    .fetchApiServiceAll()
+    .then(r => {
+      cards(r._embedded.events, refs.cardsList);
+      preloader.remove();
+      makePaginationList(r, event);
+    })
+    .catch(e => console.log('hello', e));
 }
 
-fetchEvents(event)
-
-refs.paginationList.addEventListener('click', (e) => {
-  
-  event.page = Number(e.target.textContent) - 1
-  fetchEvents(event)
-})
-
-// const bodyRef = document.querySelector('body');
-// bodyRef.addEventListener('keydown', e => {
-//   if (e.key === 'ArrowRight') {
-//     event.incrementPage();
-//     event.fetchApiServiceAll().then(r => console.log(r._embedded.events));
-//   }
-//   if (e.key === 'ArrowLeft') {
-//     event.decrementPage();
-//     event.fetchApiServiceAll().then(r => console.log(r._embedded.events));
-//   }
-// });
+fetchEvents(event);

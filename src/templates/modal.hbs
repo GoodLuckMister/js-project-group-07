@@ -1,56 +1,55 @@
 <div class="modal__overlay"></div>
 
-
-{{!-- ссылки на запросы необходимо уточнить!!!! --}}
-
-
 <div class="modal-content">
     <button
         type="button"
-        class="modal__button"
+        class="modal__button close"
         data-action="close-modal">
             {{!-- <svg class="modal__icon--close">
               <use href="../images/inline-sprite.svg#icon-close"></use>
             </svg> --}}
+            X
     </button>
 
-    <img class="modal-content__circle-pic" src={{images-url-16-9}} alt="" />
+    <img class="modal-content__circle-pic" src={{images.[7].url}} alt="" />
 
     <div class="modal-content__event-stats">
-        <img src={{images-url-16-9}} alt="" class="modal-content__event-stats__pic-preview">
+        <img src={{images.[7].url}} alt="" class="modal-content__event-stats__pic-preview">
 
-        <ul class="modal-content__event-stats__event-about">
-            <li>
+        <ul class="modal-content__event-stats__event-about stats-list">
+            <li class="stats-item info">
                 <h3 class="modal-content__event-about__event-title">Info</h3>
-                <p class="modal-content__event-about__event-info">{{}}</p>
+                <p class="modal-content__event-about__event-info">{{info}}</p>
             </li>
-            <li>
+            <li class="stats-item when">
                 <h3 class="modal-content__event-about__event-title">When</h3>
-                <p class="modal-content__event-about__event-when-date">{{dates-start-localDate}}</p>
-                <p class="modal-content__event-about__event-when-time">{{dates-start-localTime}} {{dates-timezone}}</p>
+                <p class="modal-content__event-about__event-when-date">{{dates.start.localDate}}</p>
+                <p class="modal-content__event-about__event-when-time">{{dates.start.localTime}} ({{dates.timezone}})</p>
             </li>
-            <li>
+            <li class="stats-item where">
                 <h3 class="modal-content__event-about__event-title">Where</h3>
-                <p class="modal-content__event-about__event-where-city">{{venues-city-name}}, {{venues-country-name}} /</p>
-                <p class="modal-content__event-about__event-where-place">{{venues-name}}</p>
+                <p class="modal-content__event-about__event-where-city">{{_embedded.venues.[0].city.name}}, {{_embedded.venues.[0].country.name}}</p>
+                <p class="modal-content__event-about__event-where-place">{{_embedded.venues.[0].name}}</p>
             </li>
-            <li>
+            <li class="stats-item who">
                 <h3 class="modal-content__event-about__event-title">Who</h3>
-                <p class="modal-content__event-about__event-who">{{attraction-name}}</p>
+                <p class="modal-content__event-about__event-who">{{_embedded.attractions.[0].name}}</p>
             </li>
-            <li>
-                <h3 class="modal-content__event-about__event-title">Prices</h3>
+            <li class="stats-item price">
+                <h3 class="modal-content__event-about__event-title price">Prices</h3>
                 {{#each priceRanges}}
-                    {{!-- <img src="../images/our-images/ticket_mob.png" alt="" class="modal-content__event-about__ticket-pic"> --}}
                     <svg class="modal-content__icon--ticket">
                         <use href="../images/inline-sprite.svg#icon-ticket"></use>
                     </svg>
                     <p class="modal-content__event-about__event-prices">{{type}} {{min}}-{{max}} {{currency}}</p>
-                    <a href={{}} class="button modal-content__event-about__button-buy" data-action="buy-tickets">Buy tickets</a>
-                    {{/each}}
+                    <a href=# class="button modal-content__event-about__button-buy" target="_blank" data-action="buy-tickets">Buy tickets</a>
+                {{/each}}
             </li>
         </ul>
     </div>
         
-    <a href={{}} class="button modal-content__button-more" data-action="show-more">More from this author</a>
+    {{!-- <a href=# class="button modal-content__button-more" data-action="show-more">More from this author</a> --}}
+    <button type="button" class="button modal-content__button-more" data-action="show-more">
+      More from this author
+    </button>
 </div>

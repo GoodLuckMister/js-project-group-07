@@ -8,7 +8,6 @@
   &__field {
     position: relative;
     margin-bottom: 25px;
-
     fill: getColor('form-text');
   }
 
@@ -23,10 +22,11 @@
     font-family: Montserrat;
     font-size: 16px;
     line-height: 1.25;
+    outline: none;
 
     // color: getColor('form-text');
 
-    &::placeholder{
+    &::placeholder {
       color: getColor('form-text');
     }
 
@@ -53,7 +53,7 @@
 
     fill: inherit;
 
-    transition: transform 250ms linear;
+    transition: transform 250ms $cubic;
   }
 
   &__icon--country {
@@ -66,7 +66,7 @@
     fill: inherit;
     pointer-events: none;
 
-    transition: transform 250ms linear;
+    transition: transform 250ms $cubic;
   }
 }
 
