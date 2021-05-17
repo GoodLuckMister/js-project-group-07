@@ -1,10 +1,20 @@
+.js-modal {
+    opacity: 0;
+    pointer-events: none;
+
+    &.is-open {
+        opacity: 1;
+        pointer-events: initial;
+    }
+}
+
 .modal__overlay {
     position: absolute;
     z-index: 9;
     top: 0;
     left: 0;
     width: 100vw;
-    height: 100%;
+    height: 200%;
     background: rgba(32, 13, 29, 0.6);
     backdrop-filter: blur(3px);
 }
@@ -209,6 +219,7 @@
 
     .modal__button.close {
         position: absolute;
+        // z-index: 11;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -218,9 +229,15 @@
         height: 37px;
         border-radius: 50%;
         padding: 0;
-        background-color: transparent;
+        background-color: getColor('accent');
+        // background-image: url("../../images/our-images/close.svg");
         border: none;
-   
+        
+        &:hover,
+        &:focus {
+            background-color: blue;
+        }
+
         &:hover .modal__icon--close,
         &:focus .modal__icon--close {
             fill: getColor('accent');

@@ -14,7 +14,7 @@
     <img class="modal-content__circle-pic" src={{images.[7].url}} alt="" />
 
     <div class="modal-content__event-stats">
-        <img src={{images.[7].url}} alt="" class="modal-content__event-stats__pic-preview">
+        <img src={{images.[0].url}} alt="" class="modal-content__event-stats__pic-preview">
 
         <ul class="modal-content__event-stats__event-about stats-list">
             <li class="stats-item info">
@@ -38,12 +38,12 @@
             <li class="stats-item price">
                 <h3 class="modal-content__event-about__event-title price">Prices</h3>
                 {{#each priceRanges}}
-                    <svg class="modal-content__icon--ticket">
+                    {{!-- <svg class="modal-content__icon--ticket">
                         <use href="../images/inline-sprite.svg#icon-ticket"></use>
-                    </svg>
+                    </svg> --}}
                     <p class="modal-content__event-about__event-prices">{{type}} {{min}}-{{max}} {{currency}}</p>
-                    <a href=# class="button modal-content__event-about__button-buy" target="_blank" data-action="buy-tickets">Buy tickets</a>
                 {{/each}}
+                <a href={{url}} class="button modal-content__event-about__button-buy" target="_blank" data-action="buy-tickets">Buy tickets</a>
             </li>
         </ul>
     </div>
