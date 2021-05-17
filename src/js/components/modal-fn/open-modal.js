@@ -25,7 +25,7 @@ export default function onEventClick(event) {
     
     window.addEventListener('keydown', onEscKeyPress);
     
-    refs.modalCloseBtn.addEventListener('click', onModalClose);
+    refs.modalEl.addEventListener('click', onModalClose);
     
     console.log(refs.modalCloseBtn);
     // console.log(event.target.id);
@@ -34,6 +34,12 @@ export default function onEventClick(event) {
 
 
 function onModalClose(event) {
+    const closeModalBtn = document.querySelector('button[data-action="close-modal')
+
+    if (event.target === closeModalBtn) {
+        console.log('onModalClose');
+    };
+    
     window.removeEventListener('keydown', onEscKeyPress);
     refs.modalEl.classList.remove('is-open');
     console.log('click');
