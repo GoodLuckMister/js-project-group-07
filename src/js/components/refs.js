@@ -11,3 +11,4 @@ export default {
   modalOverlay: document.querySelector('.modal__overlay'),
   showMoreBtn: document.querySelector('button[data-action="show-more"]'),
 };
+
