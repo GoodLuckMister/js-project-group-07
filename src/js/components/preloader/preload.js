@@ -1,60 +1,26 @@
-// 
-import elements from '../../../templates/card.hbs';
+export default class Preloader {
+  constructor(element) {
+    this.element = element;
+  }
 
+  markupPreloader() {
+    return (this.element.innerHTML = `
+              <ul class="cssload-loader">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+              </ul>
+            `);
+  }
 
-const photoRef = document.querySelector('.image');
-const preloader = document.querySelector('.preloader');
-const hidePreloader = () => preloader.remove();
-
-photoRef.onload = () => {
-    console.log('hello');
+  preloaderShow() {
+    this.markupPreloader();
+    return (this.element.style = 'display: block');
+  }
+  preloaderRemove() {
+    return (this.element.style = 'display: none');
+  }
 }
-  
-
-const asyncImageLoader = imageRef => {
-    return new Promise((resolve, reject) => {
-        imageRef.onload = function () {
-        resolve(imageRef);
-        };
-    
-        imageRef.onerror = function (error) {
-        reject(error);
-        };
-    });
-    };
-
-asyncImageLoader(photoRef).then(result => {
-    return wait(2000)  
-    }).then(res => {
-    hidePreloader()
-    })
-    
-const lazyLoading = imageRef => {
-    const src = imageRef.dataset.src;
-    imageRef.src = src;
-    return asyncImageLoader(imageRef);
-    };
-
-lazyLoading(photoRef)
-    .catch(error => console.log(error, '----error'))
-    .then(result => {
-        console.log(result, '---result');
-        return wait(2000);
-    })
-    .finally(() => {
-        hidePreloader();
-});
-
-const wait = delay => {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-        const a = 10;
-        const b = 15;
-        const result = a + b;
-        resolve(result);
-        }, delay);
-    });
-    };
-
-
-
