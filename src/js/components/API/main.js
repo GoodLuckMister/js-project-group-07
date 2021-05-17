@@ -22,8 +22,6 @@ export function fetchEvents(event) {
   event
     .fetchApiServiceAll()
     .then(r => {
-      console.log(r._embedded.events);
-
       cards(r._embedded.events, refs.cardsList);
       preloader.remove();
       makePaginationList(r, event);
