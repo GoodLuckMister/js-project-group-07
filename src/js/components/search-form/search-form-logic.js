@@ -25,7 +25,7 @@ let preloader = new Preloader(refs.containerPreload);
 
 export default function onSearch(e) {
   event.query = e.target.value.trim();
-  event.location = savedCountry || refs.form.elements.country.value;
+  event.location = savedCountry || event.location;
   preloader.show();
   event
     .fetchApiBySearch()
