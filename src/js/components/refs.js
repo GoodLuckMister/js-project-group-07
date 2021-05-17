@@ -12,3 +12,4 @@ export default {
   showMoreBtn: document.querySelector('button[data-action="show-more"]'),
   footer: document.querySelector('.footer'),
 };
+
