@@ -27,7 +27,7 @@
     animation-name: selectItem;
     animation-duration: 1000ms;
     animation-delay: 300ms;
-    animation-timing-function: linear;
+    animation-timing-function: $cubic;
     animation-direction: alternate;
     animation-iteration-count: infinite;
     > .card__event-image-container {
@@ -88,49 +88,43 @@
 }
 
 .card__event-title {
-  font-family: Montserrat;
+  font-family: $main-font;
   color: getColor('accent');
-  font-weight: bold;
-  font-size: 14px;
-  line-height: 1.2;
+  @include fonts(700, 14px, 1.2);
+  // font-weight: bold;
+  // font-size: 14px;
+  // line-height: 1.2;
   text-align: center;
   margin-top: 5px;
 
   @include for-size('tablet') {
-    font-size: 16px;
-    line-height: 1.25;
+    @include fonts(700, 16px, 1.25);
   }
 }
 
 .card__event-date {
-  font-family: Montserrat;
+  font-family: $main-font;
   color: getColor('light');
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 1.2;
+  @include fonts(400, 14px, 1.2);
   text-align: center;
   margin-top: 5px;
 
   @include for-size('tablet') {
-    font-size: 16px;
-    line-height: 1.25;
+    @include fonts(400, 16px, 1.25);
   }
 }
 
 .card__event-place {
-  font-family: Montserrat;
+  font-family: $main-font;
   color: getColor('light');
-  font-weight: 600;
-  font-size: 12px;
-  line-height: 1.25;
+  @include fonts(600, 12px, 1.25);
   text-align: center;
   margin-top: 5px;
   margin: 0 auto;
   width: 128px;
 
   @include for-size('tablet') {
-    font-size: 14px;
-    line-height: 1.2;
+    @include fonts(600, 14px, 1.2);
     width: 180px;
   }
 
