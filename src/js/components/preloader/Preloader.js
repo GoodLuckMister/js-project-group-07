@@ -1,4 +1,4 @@
-export default class Preloader {
+export default class {
   constructor(element) {
     this.element = element;
   }
@@ -16,11 +16,11 @@ export default class Preloader {
             `);
   }
 
-  preloaderShow() {
+  show() {
     this.markupPreloader();
     return (this.element.style = 'display: block');
   }
-  preloaderRemove() {
+  remove() {
     return (this.element.style = 'display: none');
   }
 }
