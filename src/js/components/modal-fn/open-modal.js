@@ -39,27 +39,44 @@ export default function onEventClick(event) {
 
 
 function onModalClose(event) {
-    const closeModalBtn = document.querySelector('button[data-action="close-modal')
-
+    const closeModalBtn = document.querySelector('button[data-action="close-modal');
+    // const modalOverlay = document.querySelector('.modal__overlay');
+    
     if (event.target === closeModalBtn) {
-        console.log('onModalClose');
+        window.removeEventListener('keydown', onEscKeyPress);
+        refs.modalEl.classList.remove('is-open');
+        refs.modalEl.innerHTML = '';
     };
     
-    window.removeEventListener('keydown', onEscKeyPress);
-    refs.modalEl.classList.remove('is-open');
-    // console.log('click');
-    refs.modalEl.innerHTML = '';
+    
 };
 
 function onEscKeyPress(event) {
     if (event.code === 'Escape') {
-        onModalClose(event)
+        // onModalClose(event)
+        window.removeEventListener('keydown', onEscKeyPress);
+        refs.modalEl.classList.remove('is-open');
+        refs.modalEl.innerHTML = '';
     }
 };
 
 
-// refs.modalOverlay.addEventListener('click', (event) => {
+function onModalOverlayClick(event) {
+    if (event.currentTarget === event.target) {
+        // onModalClose()
+        window.removeEventListener('keydown', onEscKeyPress);
+        refs.modalEl.classList.remove('is-open');
+        refs.modalEl.innerHTML = '';
+    }
+}
+
+// сonst modalOverlayEl = document.querySelector('.modal__overlay'); 
+// refs.modalEl.firstChild.addEventListener('click', (event) => {
+// refs.modalEl.firstChild.addEventListener('click', (event) => {
 //     if (event.currentTarget === event.target) {
-//         onModalClose()
+//         // onModalClose()
+//         window.removeEventListener('keydown', onEscKeyPress);
+//         refs.modalEl.classList.remove('is-open');
+//         refs.modalEl.innerHTML = '';
 //     }
 // });
