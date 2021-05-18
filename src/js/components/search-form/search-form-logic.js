@@ -3,13 +3,6 @@ import cards from '../renderCard/renderCard';
 import { event } from '../API/main';
 import showNotification from './notification';
 import makePaginationList from '../pagination/pagination';
-
-// import throttle from 'lodash.throttle';
-
-// export default function onSearch(e) {
-//   event.query = e.target.value.trim();
-// event.location = refs.form.elements.country.value;
-
 import { saveSearchRequest } from '../../webStorageApi/storageOfSearchQuery';
 import { saveCountry, savedCountry } from '../../webStorageApi/storageOfCounty';
 import Preloader from '../preloader/Preloader';
@@ -32,7 +25,7 @@ let preloader = new Preloader(refs.containerPreload);
 
 export default function onSearch(e) {
   event.query = e.target.value.trim();
-  event.location = savedCountry || refs.form.elements.country.value;
+  event.location = savedCountry || event.location;
   preloader.show();
 
   event
