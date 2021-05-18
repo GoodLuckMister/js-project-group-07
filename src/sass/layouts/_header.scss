@@ -6,7 +6,7 @@
   border: 1px rgb(112, 88, 88);
   padding-top: 80px;
 
-  @include for-size(tablet) {
+  @include for-size(mobile) {
     padding-top: 40px;
   }
 
