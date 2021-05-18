@@ -6,3 +6,4 @@ import '../js/components/pagination/onPaginationButtonClick';
 import '../js/components/footer';
 // import '../js/components/modal-fn/mainModal';
 import '../js/components/preloader/Preloader';
+import './components/search-form/searchFormList';
