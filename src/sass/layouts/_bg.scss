@@ -2,7 +2,6 @@ body {
   background-color: getColor('body-bg-color');
   background-repeat: no-repeat;
   background-blend-mode: normal;
-  background-attachment: inherit;
 
   @include for-size(tablet) {
     background-image: url('../../src/images/bg-images/ellipse_left_centre.png'),
