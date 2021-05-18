@@ -54,13 +54,14 @@ function onInputFocus(e) {
   }
 }
 
-function chooseCountryFromList(e) {
+export function chooseCountryFromList(e) {
   refs.formListItems.forEach(el => {
     if (e.target === el) {
       const countryCode = e.target.dataset.code;
       const countryName = e.target.textContent.trim();
       event.location = countryCode;
       refs.form.elements.country.value = countryName;
+      saveCountry();
     }
   });
 }
