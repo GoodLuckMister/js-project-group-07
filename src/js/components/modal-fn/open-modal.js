@@ -61,6 +61,17 @@ function onEscKeyPress(event) {
 };
 
 
+function onModalOverlayClick(event) {
+    if (event.currentTarget === event.target) {
+        // onModalClose()
+        window.removeEventListener('keydown', onEscKeyPress);
+        refs.modalEl.classList.remove('is-open');
+        refs.modalEl.innerHTML = '';
+    }
+}
+
+// сonst modalOverlayEl = document.querySelector('.modal__overlay'); 
+// refs.modalEl.firstChild.addEventListener('click', (event) => {
 // refs.modalEl.firstChild.addEventListener('click', (event) => {
 //     if (event.currentTarget === event.target) {
 //         // onModalClose()
