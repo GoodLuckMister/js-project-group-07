@@ -12,8 +12,6 @@ export default {
   showMoreBtn: document.querySelector('button[data-action="show-more"]'),
   formList: document.querySelector('.form__list'),
   formListItems: document.querySelectorAll('.country-list__item'),
-  formOverflow: document.querySelectorAll('.form__overflow'),
+  formOverflow: document.querySelector('.form__overflow'),
   footer: document.querySelector('.footer'),
 };
-
-

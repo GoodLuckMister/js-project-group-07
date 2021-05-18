@@ -51,6 +51,7 @@ refs.form.elements.country.addEventListener('blur', onInputBlur);
 function onInputFocus(e) {
   if (e.target.value === '') {
     refs.formList.classList.toggle('shown');
+    togglePointerFromFormOverflow();
   }
 }
 
@@ -70,6 +71,7 @@ function onInputBlur(e) {
   setTimeout(() => {
     refs.formList.classList.remove('shown');
   }, 500);
+  togglePointerFromFormOverflow();
 }
 
 function onInputClick(e) {
@@ -77,4 +79,11 @@ function onInputClick(e) {
     return;
   }
   refs.formList.classList.toggle('shown');
+  togglePointerFromFormOverflow();
+}
+
+function togglePointerFromFormOverflow() {
+  setTimeout(() => {
+    refs.formOverflow.classList.toggle('pointer-open-js');
+  }, 500);
 }

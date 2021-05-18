@@ -36,6 +36,7 @@
     font-family: Montserrat;
     font-size: 16px;
     line-height: 1.25;
+    color: getColor('light');
     outline: none;
 
     &::placeholder {
@@ -86,6 +87,11 @@
     position: absolute;
     overflow: hidden;
     z-index: 1000;
+    pointer-events: none;
+
+    &.pointer-open-js {
+      pointer-events: auto;
+    }
   }
 
   &__list {
@@ -96,9 +102,15 @@
     overflow: scroll;
     transform: translateY(-100%);
     transition: 250ms $cubic;
-
-    background-color: getColor('form-bg');
+    background: rgb(0, 0, 0);
+    background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.74) 20%,
+      rgba(220, 86, 197, 0.8561799719887955) 43%,
+      rgba(255, 255, 255, 0.2) 58%
+    );
     cursor: pointer;
+    border: 1px solid getColor('form-bg');
     border-radius: 50px 0px;
     padding: 20px 20px;
 
@@ -113,7 +125,7 @@
 }
 
 .country-list__item {
-  color: getColor('body-bg-color');
+  color: getColor('light');
   font-family: Montserrat, sans-serif;
   @include fonts(400, 16px, 1.25);
 
