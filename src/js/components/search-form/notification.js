@@ -6,11 +6,12 @@ import refs from '../refs'
 
 export default function showNotification() {
   info({
-    text: 'No mathes found',
+    text: 'Unfortunately, no matches found. Please change search conditions.',
     styling: 'angeler',
     mode: 'dark',
     delay: 2000,
     animation: 'fade',
+    width: '650px',
     animateSpeed: 'slow',
     stack: new Stack({
       dir1: 'down',
