@@ -16,9 +16,13 @@ export const event = new api(request, country);
 const preloader = new Preloader(refs.containerPreload);
 
 export function fetchId(eventId) {
+  preloader.show();
   event
     .fetchDetails(eventId)
-    .then(r => renderModal(r))
+    .then(r => {
+      renderModal(r);
+      preloader.remove();
+     })
     .catch(e => console.log('error', e));
 }
 

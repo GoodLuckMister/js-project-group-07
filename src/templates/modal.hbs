@@ -5,12 +5,6 @@
         type="button"
         class="modal__button close"
         data-action="close-modal">
-            {{!-- <svg class="modal__icon--close">
-              <use href="images/our-images/sprite.svg#icon-close"></use>
-            </svg> --}}
-            {{!-- <svg class="modal__icon--close">
-              <use href="/images/our-images/close.svg"></use>
-            </svg> --}}
     </button>
 
     <img class="modal-content__circle-pic" src={{images.[7].url}} alt="" />
@@ -40,9 +34,6 @@
             <li class="stats-item price">
                 <h3 class="modal-content__event-about__event-title price">Prices</h3>
                 {{#each priceRanges}}
-                    {{!-- <svg class="modal-content__icon--ticket">
-                        <use href="./images/our-images/icon-ticket.svg"></use>
-                    </svg> --}}
                     <div class="modal-content__icon--ticket"></div>
                     <p class="modal-content__event-about__event-prices">{{type}} {{min}}-{{max}} {{currency}}</p>
                     <br>
@@ -52,7 +43,6 @@
         </ul>
     </div>
         
-    {{!-- <a href=# class="button modal-content__button-more" data-action="show-more">More from this author</a> --}}
     <button type="button" class="button modal-content__button-more" data-action="show-more">
       More from this author
     </button>
