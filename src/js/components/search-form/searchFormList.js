@@ -1,5 +1,5 @@
-import refs from '../refs';
-import { event } from '../API/main';
+import refs from '../refs/refs';
+import { event } from './search-form-logic';
 import { saveCountry } from '../../webStorageApi/storageOfCounty';
 
 refs.form.elements.country.addEventListener('focus', onInputFocus);

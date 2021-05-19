@@ -1,7 +1,9 @@
-import refs from '../refs';
+import refs from '../refs/refs';
 import debounce from 'lodash.debounce';
-import { event } from '../API/main';
-import { fetchEvents } from '../API/main';
+import API from '../../API/DiscoveryAPI';
+import fetchEvents from '../firstLoad/firstLoad';
+
+const event = new API();
 
 refs.paginationList.addEventListener(
   'click',

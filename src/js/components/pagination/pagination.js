@@ -1,4 +1,4 @@
-import refs from '../refs';
+import refs from '../refs/refs';
 
 export default function makePaginationList(r, api) {
   paginationMarkup(r, api);

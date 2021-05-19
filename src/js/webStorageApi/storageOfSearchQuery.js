@@ -1,4 +1,4 @@
-import refs from '../components/refs';
+import refs from '../components/refs/refs';
 
 const STORAGE_REQUEST_KEY = 'searchRequest';
 

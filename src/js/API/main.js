@@ -1,11 +1,11 @@
-import api from './discoveryAPI';
-import cards from '../renderCard/renderCard';
-import refs from '../refs';
-import makePaginationList from '../pagination/pagination';
-import Preloader from '../preloader/Preloader';
-import renderModal from '../modal-fn/modalMarkup';
-import { savedSearchRequest } from '../../webStorageApi/storageOfSearchQuery';
-import { savedCountry } from '../../webStorageApi/storageOfCounty';
+import api from './DiscoveryAPI';
+import cards from './components/renderCard/renderCard';
+import refs from './components/refs';
+import makePaginationList from './components/pagination/pagination';
+import Preloader from './components/preloader/Preloader';
+import renderModal from './components/modal-fn/modalMarkup';
+import { savedSearchRequest } from './webStorageApi/storageOfSearchQuery';
+import { savedCountry } from './webStorageApi/storageOfCounty';
 
 const country = savedCountry || 'US';
 const request = savedSearchRequest || 'Concert';
@@ -22,7 +22,7 @@ export function fetchId(eventId) {
     .then(r => {
       renderModal(r);
       preloader.remove();
-     })
+    })
     .catch(e => console.log('error', e));
 }
 

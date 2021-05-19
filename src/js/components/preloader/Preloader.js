@@ -1,6 +1,6 @@
 export default class {
-  constructor(element) {
-    this.element = element;
+  constructor() {
+    this.element = document.querySelector('.preloader');
   }
 
   markupPreloader() {

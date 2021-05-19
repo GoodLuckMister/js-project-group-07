@@ -1,8 +1,7 @@
 import { info, Stack } from '@pnotify/core';
 import '@pnotify/core/dist/Angeler.css';
-import "@pnotify/core/dist/PNotify.css";
-import refs from '../refs'
-
+import '@pnotify/core/dist/PNotify.css';
+import refs from '../refs/refs';
 
 export default function showNotification() {
   info({
@@ -17,6 +16,6 @@ export default function showNotification() {
       dir1: 'down',
       firstpos1: 275,
       context: refs.header,
-  })
-  })
-};
+    }),
+  });
+}
