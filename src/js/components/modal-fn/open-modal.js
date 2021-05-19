@@ -30,11 +30,23 @@ export default function onEventClick(event) {
     window.addEventListener('keydown', onEscKeyPress);
     
     refs.modalEl.addEventListener('click', onModalClose);
+    refs.modalEl.addEventListener('click', onShowMore);
     
-
+    
     // console.log(refs.modalCloseBtn);
     // console.log(event.target.id);
    
+}
+
+
+
+function onShowMore(event) {
+    const showMoreBtn = document.querySelector('button[data-action="show-more"]');
+    const modalContent = document.querySelector('.modal-content__event-promoter-info')
+
+    if (event.target === showMoreBtn) {
+        modalContent.classList.add('is-unhidden')
+    }
 }
 
 
@@ -45,6 +57,8 @@ function onModalClose(event) {
     if (event.target === closeModalBtn) {
         window.removeEventListener('keydown', onEscKeyPress);
         refs.modalEl.classList.remove('is-open');
+        modalContent.classList.remove('is-unhidden');
+        refs.modalEl.removeEventListener('click', onShowMore);
         refs.modalEl.innerHTML = '';
     };
     
@@ -56,6 +70,8 @@ function onEscKeyPress(event) {
         // onModalClose(event)
         window.removeEventListener('keydown', onEscKeyPress);
         refs.modalEl.classList.remove('is-open');
+        modalContent.classList.remove('is-unhidden');
+        refs.modalEl.removeEventListener('click', onShowMore);
         refs.modalEl.innerHTML = '';
     }
 };
