@@ -16,4 +16,6 @@ export default function onEventClick(event) {
     fetchId(eventId);
     window.addEventListener('keydown', onEscKeyPress);
     refs.modalEl.addEventListener('click', onModalClose);
+
 }
+
