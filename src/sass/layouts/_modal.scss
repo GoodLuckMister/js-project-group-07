@@ -1,66 +1,58 @@
 .js-modal {
-    // opacity: 0;
-    z-index: 5;
+    z-index: 9;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    position: absolute;
     pointer-events: none;
-    transition-property: opacity(0), scale(0.7);
-    transition-duration: 3000ms;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+
+    transition-property: opacity(0);
+    transition-duration: 500ms;
     transition-timing-function: linear;
-    transition-delay: 500ms;
+    transition-delay: 250ms;
 
     &.is-open {
-        // opacity: 1;
         pointer-events: initial;
-        width: 100%;
-        height: 100%;
-        transform: opacity(1), scale(1);
+        transform: opacity(1);
         
-        & .modal-content__event-stats {
-            transform: opacity(1), scale(1);
+        & .modal-content {
+            transform: scale(1);
         }
     }
 }
 
 .modal__overlay {
     position: fixed;
-    z-index: 9;
-    top: 0;
-    left: 0;
     width: 100vw;
     height: 100vh;
     background: rgba(32, 13, 29, 0.6);
     backdrop-filter: blur(3px);
-
-    transition-property: opacity(0), scale(0.7);
-    transition-duration: 3000ms;
-    transition-timing-function: linear;
-    transition-delay: 500ms;
-
 }
 
 .modal-content {
     position: absolute;
     z-index: 10;
     top: 200px;
-    left: 50%;
-    transform: translate(-50%, 0);
+    transform: scale(0.7);
     width: 272px;
     margin: auto;
     padding: 75px 14px 104px;
     border-radius: 150px 0px;
     background-color: getColor('modal-bg');
 
-    transition-property: opacity(0), scale(0.7);
-    transition-duration: 3000ms;
+    transition-property: scale(0.7);
+    transition-duration: 1500ms;
     transition-timing-function: linear;
-    transition-delay: 1000ms;
+    transition-delay: 300ms;
     
     @include for-size('tablet') {
         width: 595px;
         padding: 28px 17px 56px 50px;
         border-radius: 300px 0px;
         top: 160px;
-        left: 50%;
-        transform: translate(-50%, 0);
     }
 
     @include for-size('desktop') {
@@ -68,8 +60,6 @@
         padding: 62px 30px;
         border-radius: 300px 0px;
         top: 200px;
-        left: 50%;
-        transform: translate(-50%, 0);
     }
 
     &__circle-pic {
@@ -162,7 +152,6 @@
             background-color: getColor('btn-bg');
             padding: 10px 19px;
             border-radius: 5px;
-            // cursor: pointer;
             
             @include fonts(500, 16px, 1.25);
             

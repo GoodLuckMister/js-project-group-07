@@ -1,22 +1,25 @@
 import refs from '../refs'
 
-// refs.modalCloseBtn.addEventListener('click', onModalClose);
+export function onModalClose(event) {
+    const closeModalBtn = document.querySelector('button[data-action="close-modal');
+    
+    if (event.target === closeModalBtn) {
+        window.removeEventListener('keydown', onEscKeyPress);
+        refs.modalEl.classList.remove('is-open');
+        refs.modalEl.innerHTML = '';
+    };
+};
 
-// export function onModalClose(event) {
-//     window.removeEventListener('keydown', onEscKeyPress);
-//     modalEl.classList.remove('is-open');
-// };
-
-// export function onEscKeyPress(event) {
-//     if (event.code === 'Escape') {
-//         onModalClose(event)
-//     }
-// };
+export function onEscKeyPress(event) {
+    if (event.code === 'Escape') {
+        window.removeEventListener('keydown', onEscKeyPress);
+        refs.modalEl.classList.remove('is-open');
+        refs.modalEl.innerHTML = '';
+    }
+};
 
 // refs.modalOverlay.addEventListener('click', (event) => {
 //     if (event.currentTarget === event.target) {
 //         onModalClose()
 //     }
 // });
-
-// refs.modalCloseBtn.addEventListener('click', onModalClose)
