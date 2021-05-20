@@ -18,7 +18,7 @@ export default function onSearch(e) {
   }
   preloader.show();
   event
-    .fetchApiBySearch()
+    .fetchApiServiceAll()
     .then(r => {
       if (!r._embedded) {
         preloader.remove();
