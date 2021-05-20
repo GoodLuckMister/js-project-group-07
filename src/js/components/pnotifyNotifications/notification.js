@@ -5,7 +5,7 @@ import refs from '../refs/refs';
 
 export default function showNotification() {
   info({
-    text: 'Unfortunately, no matches found..',
+    text: 'Sorry, no matches found.',
     styling: 'angeler',
     mode: 'dark',
     delay: 2000,
@@ -14,7 +14,7 @@ export default function showNotification() {
     animateSpeed: 'slow',
     stack: new Stack({
       dir1: 'down',
-      firstpos1: 275,
+      firstpos1: 250,
       context: refs.header,
     }),
   });
