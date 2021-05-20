@@ -21,9 +21,10 @@ export function fetchId(eventId) {
     .fetchDetails(eventId)
     .then(r => {
       renderModal(r);
-      preloader.remove();
+      // preloader.remove();
      })
-    .catch(e => console.log('error', e));
+    .catch(e => console.log('error', e))
+    .finally(preloader.remove());
 }
 
 // event.fetchDetails('G5diZ4VBwFSX2').then(r => console.log(r))
@@ -35,10 +36,11 @@ export function fetchEvents(event) {
     .fetchApiServiceAll()
     .then(r => {
       cards(r._embedded.events, refs.cardsList);
-      preloader.remove();
+      // preloader.remove();
       makePaginationList(r, event);
     })
-    .catch(e => console.log('hello', e));
+    .catch(e => console.log('hello', e))
+    .finally(preloader.remove());
 }
 
 fetchEvents(event);
