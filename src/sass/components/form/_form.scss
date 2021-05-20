@@ -1,0 +1,27 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 270px;
+  margin-right: auto;
+  margin-left: auto;
+
+  @include for-size('tablet') {
+    width: 570px;
+    flex-direction: row;
+  }
+
+  &__field {
+    height: 40px;
+    position: relative;
+    fill: getColor('form-text');
+
+    &:nth-child(1) {
+      margin-bottom: 25px;
+
+      @include for-size('tablet') {
+        margin-bottom: 0px;
+        margin-right: 30px;
+      }
+    }
+  }
+}
