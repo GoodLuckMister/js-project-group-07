@@ -21,7 +21,12 @@ export default function fetchEvents(event) {
       cards(r._embedded.events, refs.cardsList);
       makePaginationList(r, event);
     })
-    .catch(e => console.log('hello', e))
+    .catch(e =>
+      console.log(
+        'Unfortunately, no matches found. Please change search conditions.',
+        e,
+      ),
+    )
     .finally(() => preloader.remove());
 }
 

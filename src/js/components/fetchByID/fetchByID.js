@@ -12,6 +12,11 @@ export default function (Id) {
     .then(r => {
       renderModal(r);
     })
-    .catch(e => console.log('error', e))
+    .catch(e =>
+      console.log(
+        'Unfortunately, no matches found. Please change search conditions.',
+        e,
+      ),
+    )
     .finally(() => preloader.remove());
 }

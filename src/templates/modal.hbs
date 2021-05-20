@@ -3,6 +3,7 @@
 <div class="modal-content">
     <button
         type="button"
+        title="close"
         class="modal__button close"
         data-action="close-modal">
     </button>
@@ -38,12 +39,12 @@
                     <p class="modal-content__event-about__event-prices">{{type}} {{min}}-{{max}} {{currency}}</p>
                     <br>
                 {{/each}}
-                <a href={{url}} class="button modal-content__event-about__button-buy" target="_blank" data-action="buy-tickets">Buy tickets</a>
+                <a href={{url}} title="By now" class="button modal-content__event-about__button-buy" target="_blank" data-action="buy-tickets">Buy tickets</a>
             </li>
         </ul>
     </div>
         
-    <button type="button" class="button modal-content__button-more" data-action="show-more">
+    <button type="button" title="PROMOTED" class="button modal-content__button-more" data-action="show-more">
       More from this author
     </button>
     <div class="modal-content__event-promoter">

@@ -1,5 +1,5 @@
 import refs from '../refs/refs';
-import fetchId from '../fetchByID/fetByID';
+import fetchId from '../fetchByID/fetchByID';
 import { onEscKeyPress } from './close-modal';
 import { onModalClose } from './close-modal';
 
