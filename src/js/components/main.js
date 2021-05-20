@@ -1,4 +1,4 @@
-import './markup/logoMarkup';
+import './markup/mainMarkup';
 import './footer/footer';
 import './firstLoad/firstLoad';
 import './search-form/searchFormList';
