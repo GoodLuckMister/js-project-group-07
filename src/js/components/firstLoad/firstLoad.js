@@ -3,8 +3,13 @@ import Preloader from '../preloader/Preloader';
 import makePaginationList from '../pagination/pagination';
 import cards from '../renderCard/renderCard';
 import refs from '../refs/refs';
+import { savedSearchRequest } from '../../webStorageApi/storageOfSearchQuery';
+import { savedCountry } from '../../webStorageApi/storageOfCounty';
 
-const firstLoad = new API();
+const country = savedCountry || 'US';
+const request = savedSearchRequest || 'Concert';
+
+const firstLoad = new API(request, country);
 const preloader = new Preloader();
 
 export default function fetchEvents(event) {

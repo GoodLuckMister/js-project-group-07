@@ -21,7 +21,7 @@ export function onEscKeyPress(event) {
   }
 }
 
-function closeModal(event) {
+function closeModal() {
   window.removeEventListener('keydown', onEscKeyPress);
   refs.modalEl.classList.remove('is-open');
   refs.modalEl.innerHTML = '';
