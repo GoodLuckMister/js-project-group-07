@@ -40,7 +40,7 @@ export function fetchEvents(event) {
       makePaginationList(r, event);
     })
     .catch(e => console.log('hello', e))
-    .finally(preloader.remove());
+    .finally(() => { preloader.remove(); });
 }
 
 fetchEvents(event);
