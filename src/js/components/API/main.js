@@ -22,9 +22,11 @@ export function fetchId(eventId) {
     .then(r => {
       renderModal(r);
       // preloader.remove();
-     })
+    })
     .catch(e => console.log('error', e))
-    .finally(() => { preloader.remove(); });
+
+    .finally(() => preloader.remove());
+
 }
 
 // event.fetchDetails('G5diZ4VBwFSX2').then(r => console.log(r))
@@ -40,7 +42,9 @@ export function fetchEvents(event) {
       makePaginationList(r, event);
     })
     .catch(e => console.log('hello', e))
-    .finally(() => { preloader.remove(); });
+    .finally(() => {
+      preloader.remove();
+    });
 }
 
 fetchEvents(event);
