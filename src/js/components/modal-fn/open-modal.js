@@ -1,9 +1,9 @@
 import refs from '../refs/refs';
 import fetchId from '../fetchByID/fetByID';
-import { onEscKeyPress } from '../modal-fn/close-modal';
-import { onModalClose } from '../modal-fn/close-modal';
+import { onEscKeyPress } from './close-modal';
+import { onModalClose } from './close-modal';
 
-import onShowMore from '../modal-fn/showMore';
+import onShowMore from './showMore';
 
 export default function (event) {
   event.preventDefault();
