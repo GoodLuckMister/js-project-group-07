@@ -2,7 +2,6 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 30px 4px;
-  // margin-bottom: 60px;
   position: relative;
   top: -60px;
 
@@ -15,7 +14,6 @@
   @include for-size('desktop') {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 50px 56px;
-    // margin-bottom: 80px;
     top: -59px;
   }
 }
@@ -95,9 +93,6 @@
   font-family: $main-font;
   color: getColor('accent');
   @include fonts(700, 14px, 1.2);
-  // font-weight: bold;
-  // font-size: 14px;
-  // line-height: 1.2;
   text-align: center;
   margin-top: 5px;
 
@@ -154,7 +149,7 @@
   border-radius: 50px 0px;
   object-fit: cover;
   position: relative;
-  z-index: 2;
+  z-index: 0;
 
   @include for-size('tablet') {
     width: 180px;

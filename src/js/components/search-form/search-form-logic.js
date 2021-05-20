@@ -13,20 +13,29 @@ const preloader = new Preloader();
 
 export default function onSearch(e) {
   event.query = e.target.value.trim();
+
   if (event.query === '') {
     return;
   }
+
   preloader.show();
+
   event
     .fetchApiServiceAll()
     .then(r => {
-      if (!r._embedded) {
-        preloader.remove();
-        return showNotification();
-      }
+      checkFetch(r, e);
       cards(r._embedded.events, refs.cardsList);
       makePaginationList(r, event);
       preloader.remove();
     })
     .catch(e => console.log('hello', e));
+}
+
+function checkFetch(r, e) {
+  if (!r._embedded) {
+    preloader.remove();
+    event.query = '';
+    e.target.value = '';
+    return showNotification();
+  }
 }
