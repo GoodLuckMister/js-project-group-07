@@ -14,10 +14,10 @@ export default function fetchEvents(event) {
     .fetchApiServiceAll()
     .then(r => {
       cards(r._embedded.events, refs.cardsList);
-      preloader.remove();
       makePaginationList(r, event);
     })
-    .catch(e => console.log('hello', e));
+    .catch(e => console.log('hello', e))
+    .finally(() => preloader.remove());
 }
 
 fetchEvents(firstLoad);
