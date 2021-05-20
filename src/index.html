@@ -4,17 +4,17 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="./images/tablet/logo.png" type="image/x-icon">
+    <link
+      rel="shortcut icon"
+      href="./images/tablet/logo.png"
+      type="image/x-icon"
+    />
     <title>FIND BEST EVENTS AROUND THE WORLD</title>
   </head>
   <body>
-
-    <div class="modal js-modal">
-    </div>
-
+    <div class="modal js-modal"></div>
 
     <header class="header">
- 
       <div class="container">
         <h1 class="event-text">
           FIND BEST EVENTS<br />
@@ -30,9 +30,10 @@
               placeholder="Start searching"
               autocomplete="off"
             />
-            <svg class="form__icon--search">
+            <svg class="form__icon--search" width="12" height="12">
               <use href="./images/inline-sprite.svg#icon-search"></use>
             </svg>
+            <div class="form__icon--search"></div>
           </label>
           <div class="form__field">
             <input
@@ -89,26 +90,21 @@
                 <li class="country-list__item" data-code="UA">Ukraine</li>
               </ul>
             </div>
-            <svg class="form__icon--country">
+            <svg class="form__icon--country" width="12" height="12">
               <use href="./images/inline-sprite.svg#icon-polygon"></use>
             </svg>
-
           </div>
-
         </form>
         <div class="overlay"></div>
       </div>
     </header>
 
-
-  <div class="modal js-modal"></div>
-
+    <div class="modal js-modal"></div>
 
     <main>
       <section class="section events-section">
         <div class="container">
-            <div class="preloader">
-            </div>
+          <div class="preloader"></div>
           <ul class="events-section__list"></ul>
           <div class="pagination">
             <ul class="pagination__list"></ul>
@@ -118,8 +114,5 @@
     </main>
 
     <footer class="footer"></footer>
-
-
   </body>
 </html>
-
