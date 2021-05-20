@@ -1,0 +1,11 @@
+.modal-content__event-stats {
+  display: flex;
+
+  @include for-size('tablet') {
+    margin-bottom: 45px;
+  }
+
+  @include for-size('desktop') {
+    margin-bottom: 45px;
+  }
+}

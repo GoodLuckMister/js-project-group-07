@@ -9,8 +9,12 @@ $colors: (
   'info': rgb(14, 14, 14),
   'btn-bg': rgb(76, 0, 254),
   'header-bg-color': rgba(11, 11, 11, 0.5),
+  'header-border': rgb(112, 88, 88),
+  'header-tablet-border': rgba(0, 0, 0, 1),
   'cards-border-color': rgba(220, 86, 197, 0.3),
-  'body-bg-color': #000000,
+  'body-bg-color': rgb(0, 0, 0),
+  'modal-overlay': rgba(32, 13, 29, 0.6),
+  'css-preloader-color': rgba(0, 0, 0, 0.2),
 );
 
 @function getColor($key) {

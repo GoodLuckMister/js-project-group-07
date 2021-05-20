@@ -1,0 +1,11 @@
+.card__event-date {
+  font-family: $main-font;
+  color: getColor('light');
+  @include fonts(400, 14px, 1.2);
+  text-align: center;
+  margin-top: 5px;
+
+  @include for-size('tablet') {
+    @include fonts(400, 16px, 1.25);
+  }
+}

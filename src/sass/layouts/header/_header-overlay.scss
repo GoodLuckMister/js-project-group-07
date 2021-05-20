@@ -1,0 +1,25 @@
+.overlay {
+  position: absolute;
+  width: 320px;
+  height: 102px;
+  left: 0px;
+  top: 262px;
+  background: linear-gradient(
+    180deg,
+    rgba(13, 13, 13, 0) 0%,
+    rgba(14, 14, 14, 0.8) 100%
+  );
+
+  @include for-size(tablet) {
+    height: 102px;
+  }
+
+  @include for-size(desktop) {
+    top: 344px;
+    background: linear-gradient(
+      180deg,
+      rgba(13, 13, 13, 0.19) 0%,
+      rgba(14, 14, 14, 0.8) 100%
+    );
+  }
+}
