@@ -42,11 +42,16 @@
   padding: 75px 14px 104px;
   border-radius: 150px 0px;
   background-color: getColor('modal-bg');
-
-  transition-property: scale(0.7);
-  transition-duration: 1500ms;
-  transition-timing-function: linear;
-  transition-delay: 300ms;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+  @keyframes zoom {
+    from {
+      transform: scale(0);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
 
   @include for-size('tablet') {
     width: 595px;

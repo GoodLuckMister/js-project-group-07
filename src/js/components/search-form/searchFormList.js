@@ -1,6 +1,6 @@
 import refs from '../refs/refs';
 import { event } from './search-form-logic';
-import { saveCountry } from '../../webStorageApi/storageOfCounty';
+// import { saveCountry } from '../../webStorageApi/storageOfCounty';
 
 refs.form.elements.country.addEventListener('focus', onInputFocus);
 refs.formList.addEventListener('click', chooseCountryFromList);
@@ -21,7 +21,7 @@ function chooseCountryFromList(e) {
       const countryName = e.target.textContent.trim();
       event.location = countryCode;
       refs.form.elements.country.value = countryName;
-      saveCountry(country);
+      // saveCountry(country);
     }
   });
 }
