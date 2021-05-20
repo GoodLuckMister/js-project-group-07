@@ -11,7 +11,7 @@ export default function (Id) {
     .fetchDetails(Id)
     .then(r => {
       renderModal(r);
-      preloader.remove();
     })
-    .catch(e => console.log('error', e));
+    .catch(e => console.log('error', e))
+    .finally(() => preloader.remove());
 }

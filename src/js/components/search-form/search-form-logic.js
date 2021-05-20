@@ -26,9 +26,9 @@ export default function onSearch(e) {
       checkFetch(r, e);
       cards(r._embedded.events, refs.cardsList);
       makePaginationList(r, event);
-      preloader.remove();
     })
-    .catch(e => console.log('hello', e));
+    .catch(e => console.log('hello', e))
+    .finally(() => preloader.remove());
 }
 
 function checkFetch(r, e) {
