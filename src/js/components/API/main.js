@@ -24,7 +24,9 @@ export function fetchId(eventId) {
       // preloader.remove();
     })
     .catch(e => console.log('error', e))
+
     .finally(() => preloader.remove());
+
 }
 
 // event.fetchDetails('G5diZ4VBwFSX2').then(r => console.log(r))
