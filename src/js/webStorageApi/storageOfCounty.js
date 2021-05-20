@@ -5,3 +5,7 @@ export function saveCountry(country) {
 }
 
 export const savedCountry = localStorage.getItem(STORAGE_COUNTRY_KEY);
+
+export function clearSavedCountry() {
+  localStorage.removeItem(STORAGE_COUNTRY_KEY);
+}
