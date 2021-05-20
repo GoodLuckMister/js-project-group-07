@@ -11,7 +11,6 @@ export default {
   modalOverlay: document.querySelector('.modal__overlay'),
   showMoreBtn: document.querySelector('button[data-action="show-more"]'),
   formList: document.querySelector('.form__list'),
-  formListItems: document.querySelectorAll('.country-list__item'),
   formOverflow: document.querySelector('.form__overflow'),
   footer: document.querySelector('.footer'),
 };
