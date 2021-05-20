@@ -13,6 +13,9 @@ const preloader = new Preloader();
 
 export default function onSearch(e) {
   event.query = e.target.value.trim();
+  if (event.query === '') {
+    return;
+  }
   preloader.show();
   event
     .fetchApiBySearch()
