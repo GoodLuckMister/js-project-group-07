@@ -1,6 +1,7 @@
 import refs from '../refs/refs';
 import createLogoMarkup from './logoMarkup';
 import onEventClick from '../modal-fn/open-modal';
+import './makeCountryList';
 
 createLogoMarkup();
 
