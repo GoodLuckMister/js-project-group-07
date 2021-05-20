@@ -27,6 +27,6 @@ export default function onSearch(e) {
       saveSearchRequest();
     })
     .catch(e => console.log('hello', e))
-    .finally(preloader.remove());
+    .finally(() => { preloader.remove(); });
 }
 
