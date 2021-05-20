@@ -1,4 +1,4 @@
-import refs from '../refs';
+import refs from '../refs/refs';
 import debounce from '../../../../node_modules/lodash.debounce';
 import onSearch from './search-form-logic';
 

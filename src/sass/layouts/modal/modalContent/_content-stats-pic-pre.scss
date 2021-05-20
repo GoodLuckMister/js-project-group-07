@@ -1,0 +1,21 @@
+.modal-content__event-stats__pic-preview {
+  align-items: flex-start;
+  object-fit: cover;
+
+  @include for-size('mobile') {
+    display: none;
+  }
+
+  @include for-size('tablet') {
+    display: inline-block;
+    width: 233px;
+    height: 416px;
+    margin-right: 30px;
+  }
+
+  @include for-size('desktop') {
+    width: 360px;
+    height: 641px;
+    margin-right: 60px;
+  }
+}

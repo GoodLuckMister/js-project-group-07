@@ -1,0 +1,20 @@
+.modal-content__circle-pic {
+  display: block;
+  margin: 0 auto 18px;
+  width: 102px;
+  height: 102px;
+  border-radius: 50%;
+  object-fit: cover;
+
+  @include for-size('tablet') {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 41px;
+  }
+
+  @include for-size('desktop') {
+    width: 132px;
+    height: 132px;
+    margin: 0 auto 41px;
+  }
+}

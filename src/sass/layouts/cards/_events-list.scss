@@ -1,0 +1,19 @@
+.events-section__list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px 4px;
+  position: relative;
+  top: -60px;
+
+  @include for-size('tablet') {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 45px 13px;
+    top: -59px;
+  }
+
+  @include for-size('desktop') {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 50px 56px;
+    top: -59px;
+  }
+}

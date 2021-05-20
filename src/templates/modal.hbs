@@ -3,19 +3,20 @@
 <div class="modal-content">
     <button
         type="button"
+        title="close"
         class="modal__button close"
         data-action="close-modal">
     </button>
 
-    <img class="modal-content__circle-pic" src={{images.[7].url}} alt="{{_embedded.attractions.[0].name}}" height="132px" width="132px"/>
+    <img class="modal-content__circle-pic" src={{images.[7].url}} alt="" width="" height="" />
 
     <div class="modal-content__event-stats">
-        <img src={{images.[0].url}} alt="{{_embedded.attractions.[0].name}}" class="modal-content__event-stats__pic-preview" height="640px" width="360px"/>
+        <img src={{images.[0].url}} alt="" class="modal-content__event-stats__pic-preview" width="" height="">
 
         <ul class="modal-content__event-stats__event-about stats-list">
             <li class="stats-item info">
                 <h3 class="modal-content__event-about__event-title">Info</h3>
-                <p class="modal-content__event-about__event-info">{{info}}</p>
+                <p class="modal-content__event-about__event-info">{{name}}</p>
             </li>
             <li class="stats-item when">
                 <h3 class="modal-content__event-about__event-title">When</h3>
@@ -38,12 +39,12 @@
                     <p class="modal-content__event-about__event-prices">{{type}} {{min}}-{{max}} {{currency}}</p>
                     <br>
                 {{/each}}
-                <a href={{url}} class="button modal-content__event-about__button-buy" target="_blank" data-action="buy-tickets">Buy tickets</a>
+                <a href={{url}} title="By now" class="button modal-content__event-about__button-buy" target="_blank" data-action="buy-tickets">Buy tickets</a>
             </li>
         </ul>
     </div>
         
-    <button type="button" class="button modal-content__button-more" data-action="show-more">
+    <button type="button" title="PROMOTED" class="button modal-content__button-more" data-action="show-more">
       More from this author
     </button>
     <div class="modal-content__event-promoter">

@@ -1,0 +1,58 @@
+.form {
+  &__input {
+    width: 100%;
+    height: 40px;
+    padding: 10px 30px;
+    background-color: getColor('form-bg');
+    border: none;
+    border-radius: 20px;
+    font-family: Montserrat;
+    @include fonts(400, 16px, 1.25);
+    color: getColor('light');
+    outline: none;
+
+    &::placeholder {
+      color: getColor('form-text');
+    }
+
+    &:focus ~ .form__icon--search {
+      transform: rotate(360deg);
+      background-image: url(/images/search-focus.svg);
+    }
+
+    &:focus ~ .form__icon--country {
+      transform: rotate(180deg);
+      background-image: url(/images/Polygon-focus.svg);
+    }
+  }
+  &__icon--search {
+    position: absolute;
+    right: 30px;
+    top: 14px;
+    width: 15px;
+    height: 12px;
+
+    background-image: url(/images/search.svg);
+    background-repeat: no-repeat;
+
+    transition: transform 250ms $cubic;
+  }
+
+  &__icon--country {
+    position: absolute;
+    right: 30px;
+    top: 15px;
+    width: 12px;
+    height: 12px;
+
+    background-image: url(/images/Polygon.svg);
+    background-repeat: no-repeat;
+    pointer-events: none;
+
+    transition: transform 250ms $cubic;
+  }
+}
+
+input::-webkit-calendar-picker-indicator {
+  display: none;
+}

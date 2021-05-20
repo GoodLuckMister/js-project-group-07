@@ -1,0 +1,11 @@
+.card__event-title {
+  font-family: $main-font;
+  color: getColor('accent');
+  @include fonts(700, 14px, 1.2);
+  text-align: center;
+  margin-top: 5px;
+
+  @include for-size('tablet') {
+    @include fonts(700, 16px, 1.25);
+  }
+}

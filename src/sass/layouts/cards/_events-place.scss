@@ -1,0 +1,29 @@
+.card__event-place {
+  font-family: $main-font;
+  color: getColor('light');
+  @include fonts(600, 12px, 1.25);
+  text-align: center;
+  margin-top: 5px;
+  margin: 0 auto;
+  width: 128px;
+
+  @include for-size('tablet') {
+    @include fonts(600, 14px, 1.2);
+    width: 180px;
+  }
+
+  &::before {
+    display: inline-block;
+    content: '';
+    width: 6px;
+    height: 9px;
+    margin-right: 3px;
+    background-repeat: no-repeat;
+    background-image: url(/images/our-images/Vector.svg);
+
+    @include for-size('tablet') {
+      width: 7px;
+      height: 10px;
+    }
+  }
+}

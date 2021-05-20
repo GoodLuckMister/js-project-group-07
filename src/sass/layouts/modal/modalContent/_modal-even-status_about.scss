@@ -1,0 +1,86 @@
+.modal-content__event-stats__event-about {
+  display: block;
+
+  @include for-size('mobile') {
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  @include for-size('tablet') {
+    text-align: left;
+    margin-left: 0;
+  }
+
+  @include for-size('desktop') {
+    text-align: left;
+  }
+
+  & li {
+    margin-bottom: 10px;
+    @include for-size('desktop') {
+      margin-bottom: 20px;
+    }
+
+    &.price .modal-content__icon--ticket,
+    &.price .modal-content__event-about__event-prices {
+      display: inline-block;
+    }
+    &.price .button {
+      display: inline-block;
+      text-decoration: none;
+      text-transform: uppercase;
+      color: getColor('light');
+      background-color: getColor('btn-bg');
+      padding: 10px 19px;
+      border-radius: 5px;
+
+      @include fonts(500, 16px, 1.25);
+
+      &:hover,
+      &:focus {
+        background-color: getColor('accent');
+      }
+    }
+    &.price .modal-content__icon--ticket {
+      background-image: url('/images/our-images/ticket.svg');
+      width: 24px;
+      height: 16px;
+
+      @include for-size('desktop') {
+        width: 29px;
+        height: 19px;
+      }
+    }
+  }
+
+  & h3 {
+    text-transform: uppercase;
+    color: getColor('accent');
+    margin-bottom: 5px;
+
+    @include fonts(600, 20px, 1.2);
+
+    @include for-size('desktop') {
+      @include fonts(600, 24px, 1.2);
+    }
+  }
+
+  & p {
+    color: getColor('info');
+    margin-bottom: 0;
+
+    @include fonts(400, 16px, 1.25);
+
+    @include for-size('desktop') {
+      @include fonts(400, 18px, 1.25);
+    }
+  }
+
+  & p:not(:last-child) {
+    margin-bottom: 3px;
+
+    @include for-size('desktop') {
+      margin-bottom: 5px;
+    }
+  }
+}

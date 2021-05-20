@@ -1,0 +1,12 @@
+.modal-content__event-promoter {
+  margin-top: 10px;
+
+  .is-unhidden {
+    opacity: 1;
+  }
+
+  & p {
+    opacity: 0;
+    color: getColor('info');
+  }
+}

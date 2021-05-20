@@ -1,0 +1,12 @@
+.form__overflow {
+  height: 250px;
+  width: 100%;
+  position: absolute;
+  overflow: hidden;
+  z-index: 1000;
+  pointer-events: none;
+
+  &.pointer-open-js {
+    pointer-events: auto;
+  }
+}

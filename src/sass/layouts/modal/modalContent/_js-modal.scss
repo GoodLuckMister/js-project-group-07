@@ -1,0 +1,25 @@
+.js-modal {
+  z-index: 9;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  position: absolute;
+  pointer-events: none;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+
+  transition-property: opacity(0);
+  transition-duration: 500ms;
+  transition-timing-function: linear;
+  transition-delay: 250ms;
+
+  &.is-open {
+    pointer-events: initial;
+    transform: opacity(1);
+
+    & .modal-content {
+      transform: scale(1);
+    }
+  }
+}

@@ -9,19 +9,10 @@ export default class {
   }
   async fetchApiServiceAll() {
     const url = `${BASIC_URL}events.json?keyword=${this.keyword}&countryCode=${this.country}&page=${this.page}&apikey=${KEY}`;
-    return await fetch(url)
-      .then(response => response.json())
-      .catch(error => console.error(error));
+    return await fetch(url).then(response => response.json());
   }
   async fetchDetails(eventID) {
     const url = `${BASIC_URL}events/${eventID}.json?apikey=${KEY}`;
-    return await fetch(url)
-      .then(response => response.json())
-      .catch(error => console.error(error));
-  }
-
-  async fetchApiBySearch() {
-    const url = `${BASIC_URL}events.json?keyword=${this.keyword}&countryCode=${this.country}&page=${this.page}&apikey=${KEY}`;
     return await fetch(url).then(response => response.json());
   }
 
