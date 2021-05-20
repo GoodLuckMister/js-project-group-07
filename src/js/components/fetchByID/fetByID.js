@@ -10,6 +10,7 @@ export default function (Id) {
   event
     .fetchDetails(Id)
     .then(r => {
+      console.log(r);
       renderModal(r);
     })
     .catch(e => console.log('error', e))
