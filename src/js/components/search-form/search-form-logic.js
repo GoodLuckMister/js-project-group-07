@@ -16,7 +16,7 @@ const preloader = new Preloader();
 
 export default function onSearch(e) {
   event.query = e.target.value.trim();
-  event.location = savedCountry || event.location;
+  event.location = event.location || savedCountry;
 
   if (event.query === '') {
     return;
